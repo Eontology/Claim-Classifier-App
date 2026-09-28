@@ -1,0 +1,601 @@
+﻿negative_id,category,sentence,is_claim
+NEG-0001,methodology,Scope 1 emissions from stationary combustion are calculated using emission factors published by the IPCC Fifth Assessment Report.,False
+NEG-0002,methodology,Global warming potentials (GWPs) applied across all greenhouse gas calculations are based on a 100-year time horizon from the IPCC Sixth Assessment Report.,False
+NEG-0003,methodology,Biogenic carbon dioxide emissions from biomass combustion are reported separately outside of Scope 1 totals in accordance with the GHG Protocol Corporate Standard.,False
+NEG-0004,methodology,"Scope 2 market-based emissions are quantified using contractual instruments, including energy attribute certificates, power purchase agreements, and supplier-specific emission rates.",False
+NEG-0005,methodology,Location-based Scope 2 figures are calculated utilizing regional grid average emission factors provided by national energy agencies and the IEA.,False
+NEG-0006,methodology,"Where supplier-specific emission factors were unavailable for Scope 3 Category 1, secondary data from the Ecoinvent 3.9 life cycle inventory database was applied.",False
+NEG-0007,methodology,Emissions from capital goods under Scope 3 Category 2 are estimated using an economic input-output model based on annual capital expenditure breakdowns.,False
+NEG-0008,methodology,Fuel- and energy-related activities not included in Scope 1 or Scope 2 are calculated using well-to-tank (WTT) emission factors from UK DEFRA.,False
+NEG-0009,methodology,Upstream transportation and distribution calculations apply distance-based methodologies utilizing average fuel consumption per tonne-kilometer for heavy goods vehicles.,False
+NEG-0010,methodology,Employee commuting figures are modeled through an annual sample survey extrapolated across regional full-time employee headcounts.,False
+NEG-0011,methodology,Business travel emissions from commercial flights are calculated utilizing DEFRA emission factors including the recommended radiative forcing uplift multiplier.,False
+NEG-0012,methodology,Direct fugitive emissions of fluorinated gases from refrigeration and air conditioning units are estimated based on equipment screening and top-up logbooks.,False
+NEG-0013,methodology,Process emissions from calcination during lime production are determined using stoichiometric ratios based on raw material carbonate content.,False
+NEG-0014,methodology,Emission factors for metallurgical coal and natural gas combustion are sourced from national inventory reports and verified by third-party calibration.,False
+NEG-0015,methodology,"For waste generated in operations, disposal route emission factors are derived from municipal waste characterization models.",False
+NEG-0016,methodology,"End-of-life treatment of sold products is calculated assuming average global landfill, incineration, and recycling rates for metal scrap.",False
+NEG-0017,methodology,Emissions from leased assets where the company does not hold operational control are categorized under Scope 3 upstream or downstream leasing categories.,False
+NEG-0018,methodology,Downstream transportation emissions are quantified using delivery route logs provided by external logistics contractors.,False
+NEG-0019,methodology,Purchased steam and district heating consumption is converted to megawatt-hours using metered steam enthalpy tables.,False
+NEG-0020,methodology,Specific emission intensity ratios are normalized against net sales revenue and total crude production tonnage.,False
+NEG-0021,methodology,"Freshwater withdrawal metrics encompass surface water, groundwater, municipal tap water, and third-party supplied industrial water.",False
+NEG-0022,methodology,Water consumption is defined as total water withdrawn minus total volume returned to the original catchment area in compliance with local discharge permits.,False
+NEG-0023,methodology,Water stress assessments for manufacturing sites are evaluated annually utilizing the WRI Aqueduct Water Risk Atlas tool.,False
+NEG-0024,methodology,Effluent water discharge volumes are monitored through continuous electromagnetic flowmeters installed at outfall discharge points.,False
+NEG-0025,methodology,"Waste classification follows regional regulatory frameworks, differentiating strictly between hazardous waste streams and non-hazardous metallurgical by-products.",False
+NEG-0026,methodology,Recycled content ratios for manufactured steel grades are calculated in conformance with ISO 14021 environmental labelling standards.,False
+NEG-0027,methodology,Beneficial reuse of blast furnace slag in cement clinker replacement is classified under co-product valorization rather than solid waste generation.,False
+NEG-0028,methodology,"Total energy consumption aggregates direct fuel combustion, purchased electricity, district heating, and self-generated renewable power.",False
+NEG-0029,methodology,Higher heating values (gross calorific values) are utilized to convert volume and mass units of fossil fuels into gigajoules.,False
+NEG-0030,methodology,Renewable energy share calculations reflect only verified renewable electricity backed by unbundled Guarantees of Origin or bundled PPAs.,False
+NEG-0031,methodology,Lost Time Injury Frequency Rate (LTIFR) is calculated as the total number of lost time injuries per one million hours worked by employees and contractors.,False
+NEG-0032,methodology,"Total Recordable Incident Rate (TRIR) is standardized per 200,000 work hours in accordance with OSHA recording criteria.",False
+NEG-0033,methodology,"Worker exposure hours include scheduled shift hours, recorded overtime, and contractor work orders executed on company premises.",False
+NEG-0034,methodology,Occupational disease incidence rates are compiled according to classifications established by national occupational health authorities.,False
+NEG-0035,methodology,Voluntary employee turnover is measured by dividing total non-retirement voluntary resignations by the year-end headcount.,False
+NEG-0036,methodology,Gender pay gap calculations reflect median and mean differences in hourly gross earnings between female and male employees across all pay grades.,False
+NEG-0037,methodology,"Training hours per employee represent logged classroom, digital learning platform, and on-the-job accredited safety instructional time.",False
+NEG-0038,methodology,Collective bargaining coverage is defined as the proportion of the permanent workforce covered by formal trade union agreements.,False
+NEG-0039,methodology,"Diversity statistics regarding minority representation are gathered on a voluntary, self-disclosed basis in compliance with data privacy regulations.",False
+NEG-0040,methodology,"Senior management positions are defined as corporate officers, executive committee members, and functional business unit heads.",False
+NEG-0041,methodology,Taxonomy-eligible capital expenditures are identified by mapping financial asset register additions against NACE activity codes specified in EU Delegated Acts.,False
+NEG-0042,methodology,"Operating expenditure alignment under the EU Taxonomy reflects direct non-capitalized costs related to research, development, and building renovations.",False
+NEG-0043,methodology,Green revenue classification requires matching product line identifiers with criteria set forth in the Climate Delegated Act technical screening appendices.,False
+NEG-0044,methodology,"Economic value generated encompasses consolidated net revenues, financial income, and proceeds from the sale of fixed assets.",False
+NEG-0045,methodology,Cost of sales disclosed within ESG financial accounting reflects audited statutory financial statements prepared under IFRS standards.,False
+NEG-0046,methodology,R&D expenditure tracking includes capitalized development expenses and operational expenditures incurred during laboratory testing of low-emission alloys.,False
+NEG-0047,methodology,Decarbonization capital allocation reflects committed expenditures approved by the Group Capital Investment Committee.,False
+NEG-0048,methodology,Financial savings from energy efficiency initiatives are estimated using baseline utility tariff projections across active manufacturing sites.,False
+NEG-0049,methodology,Materiality assessment scoring combines impact materiality ratings from internal workshops with financial materiality scores assessed by risk management.,False
+NEG-0050,methodology,Double materiality stakeholder feedback is normalized using a weighted Likert scale reflecting geographic representation.,False
+NEG-0051,methodology,Scope 1 flare gas volumes are estimated using gas flowmeters and gas chromatograph composition analyses.,False
+NEG-0052,methodology,Emissions from maritime shipping charters are allocated based on cargo deadweight tonnage and voyage distance logged in nautical miles.,False
+NEG-0053,methodology,Rail freight transport emission calculations incorporate locomotive traction type and national electric grid emission factors.,False
+NEG-0054,methodology,Packaging material life-cycle impacts are modeled using cradle-to-gate inventory datasets from commercial databases.,False
+NEG-0055,methodology,Data completeness thresholds require that at least 95 percent of corporate legal entities report quarterly consumption data.,False
+NEG-0056,methodology,Extrapolations for non-reporting commercial offices are estimated based on average floor space intensity factors from reporting regional hubs.,False
+NEG-0057,methodology,Historic baseline recalculations are triggered if structural acquisitions or divestments alter the emissions boundary by more than five percent.,False
+NEG-0058,methodology,Base year adjustments follow guidelines established in the GHG Protocol Policy and Action Standard.,False
+NEG-0059,methodology,Methane emissions from anaerobic wastewater treatment ponds are estimated using chemical oxygen demand removal efficiency factors.,False
+NEG-0060,methodology,Nitrogen oxide emissions from reheat furnaces are measured through continuous emissions monitoring systems (CEMS) calibrated semi-annually.,False
+NEG-0061,methodology,Sulfur dioxide release volumes are quantified based on fuel sulfur content analysis and desulfurization unit efficiency ratings.,False
+NEG-0062,methodology,Total suspended particulates (TSP) and PM10 concentrations are determined using isokinetic stack sampling in accordance with EPA Method 5.,False
+NEG-0063,methodology,Noise levels at plant perimeter boundaries are evaluated through third-party acoustic surveys during day and night operating intervals.,False
+NEG-0064,methodology,Indirect emissions associated with purchased hydrogen are categorized under Scope 2 or Scope 3 depending on delivery infrastructure.,False
+NEG-0065,methodology,Carbon capture and utilization (CCU) accounting excludes volumes where CO2 is subsequently released into the atmosphere during product end-use.,False
+NEG-0066,methodology,Scrap metal quality gradations are categorized according to the European Scrap Classification and Institute of Scrap Recycling Industries standards.,False
+NEG-0067,methodology,"Specific fuel consumption per metric ton of hot rolled steel is calculated across billets, blooms, and slabs heated in reheat furnaces.",False
+NEG-0068,methodology,Energy conservation figures represent primary energy savings validated through post-commissioning measurement and verification protocols.,False
+NEG-0069,methodology,Purchased electricity transmission and distribution (T&D) losses are accounted for under Scope 3 Category 3.,False
+NEG-0070,methodology,Scope 3 Category 11 use of sold products excludes intermediate steel products with diverse and indeterminable downstream processing applications.,False
+NEG-0071,methodology,Corporate travel hotel stays are estimated using country-specific carbon conversion factors per occupied room-night.,False
+NEG-0072,methodology,"Refrigerant leak rates are computed using mass balance equations comparing opening inventory, purchases, and closing cylinder inventories.",False
+NEG-0073,methodology,Direct greenhouse gas inventory verification procedures align with the requirements of ISO 14064-3 for limited assurance engagements.,False
+NEG-0074,methodology,Biological diversity impact evaluations utilize the Integrated Biodiversity Assessment Tool (IBAT) across all production facilities.,False
+NEG-0075,methodology,Protected wetland proximity analyses are conducted for manufacturing assets located within a five-kilometer radius of Natura 2000 conservation sites.,False
+NEG-0076,methodology,Forestry-related supply chain exposure is monitored through third-party satellite deforestation tracking systems.,False
+NEG-0077,methodology,Recycled aggregate usage in on-site civil construction is documented through certified delivery weighbridge tickets.,False
+NEG-0078,methodology,Internal carbon pricing metrics are modeled as a shadow price of 80 euros per metric ton of CO2 equivalent for evaluating capital projects.,False
+NEG-0079,methodology,Sensitivity analysis regarding carbon taxation scenarios is conducted across three transition pathways defined by the Network for Greening the Financial System.,False
+NEG-0080,methodology,Corporate social responsibility project expenditures exclude internal staff administrative overhead and general marketing costs.,False
+NEG-0081,methodology,"Community grievance records are categorized by environmental disturbance, traffic impact, and general property concerns.",False
+NEG-0082,methodology,"Contractor safety statistics are consolidated on a monthly basis across all integrated mills, service centers, and scrap collection yards.",False
+NEG-0083,methodology,Near-miss incidents are tracked through the enterprise safety management software to evaluate high-potential incident frequencies.,False
+NEG-0084,methodology,Ergonomic risk assessments are conducted for repetitive manual handling tasks across secondary processing workstations.,False
+NEG-0085,methodology,Employee assistance program utilization rates represent anonymous interactions reported by the contracted external mental health provider.,False
+NEG-0086,methodology,Human rights due diligence reviews for raw material suppliers follow the OECD Due Diligence Guidance for Responsible Supply Chains of Minerals.,False
+NEG-0087,methodology,Supplier sustainability questionnaire scores are weighted according to supplier criticality and annual procurement expenditure tiers.,False
+NEG-0088,methodology,"Conflict mineral reporting templates (CMRT) are reviewed annually to determine country-of-origin information for tin, tantalum, tungsten, and gold.",False
+NEG-0089,methodology,Raw material provenance documentation is archived for seven years to support customer certification audits.,False
+NEG-0090,methodology,Customer satisfaction indices are derived from annual structured surveys administered by an independent market research agency.,False
+NEG-0091,methodology,Product carbon footprints (PCF) are modeled in accordance with ISO 14067 and European Product Environmental Footprint Category Rules.,False
+NEG-0092,methodology,"Secondary metallurgy flux additions are accounted for in mass balance inventories covering lime, fluorspar, and synthetic slag formers.",False
+NEG-0093,methodology,Ladle preheating natural gas consumption is tracked through dedicated sub-meters installed at the secondary refining station.,False
+NEG-0094,methodology,Tundish refractory consumption is quantified as kilograms of refractory material per metric ton of continuously cast steel.,False
+NEG-0095,methodology,Mill roll wear and dressing volumes are monitored within the machine shop computerized maintenance management system.,False
+NEG-0096,methodology,Compressor system compressed air leakage audits are performed using ultrasonic acoustic detection instruments.,False
+NEG-0097,methodology,Substation transformer dielectric fluid inspection logs are maintained to verify absence of polychlorinated biphenyls (PCBs).,False
+NEG-0098,methodology,Stormwater runoff monitoring samples are collected within thirty minutes of a qualifying precipitation event at permitted discharge points.,False
+NEG-0099,methodology,Underground storage tank integrity testing is conducted every five years using certified precision tightness testing methods.,False
+NEG-0100,methodology,Air emission dispersion modeling is conducted using AERMOD software based on local five-year meteorological data files.,False
+NEG-0101,methodology,Slag leachate ecotoxicity evaluations are performed using standard aquatic toxicity bioassays in certified independent testing laboratories.,False
+NEG-0102,methodology,Waste heat boiler thermal efficiency is evaluated using indirect heat loss calculation methods outlined in ASME performance test codes.,False
+NEG-0103,methodology,Cooling tower blowdown water volumes are calculated using conductivity ratios between make-up water and circulating cooling water.,False
+NEG-0104,methodology,Dust collector filter bag differential pressures are continuously recorded on supervisory control and data acquisition (SCADA) systems.,False
+NEG-0105,methodology,Acid regeneration plant recovery rates are determined by titration analysis of regenerated hydrochloric acid and iron chloride streams.,False
+NEG-0106,methodology,Continuous annealing line furnace atmosphere hydrogen concentrations are monitored via thermal conductivity gas analyzers.,False
+NEG-0107,methodology,Zinc coating weight measurement on galvanized sheet steel is performed online using x-ray fluorescence (XRF) gauging heads.,False
+NEG-0108,methodology,Steel scrap radiation detection protocols require drive-through portal monitor scans for all inbound road vehicles and rail wagons.,False
+NEG-0109,methodology,Employee exit interview data is aggregated quarterly by human resources to identify systemic workplace retention trends.,False
+NEG-0110,methodology,Whistleblower report logs are maintained confidentially under the oversight of the Head of Internal Audit.,False
+NEG-0111,methodology,Antitrust compliance training completion is monitored through mandatory annual learning management system recertification modules.,False
+NEG-0112,methodology,Intellectual property filings are logged in the central legal patent registry categorized by metallurgical innovation focus.,False
+NEG-0113,methodology,Corporate sponsorship requests are evaluated against ethical criteria established in the Global Philanthropy and Sponsorship Guidelines.,False
+NEG-0114,methodology,Board diversity metrics reflect self-identified demographic attributes disclosed in director nomination committee documentation.,False
+NEG-0115,methodology,Executive remuneration performance shares are subject to three-year vesting conditions tied to absolute total shareholder return and ESG milestones.,False
+NEG-0116,methodology,Energy management system internal audits are scheduled in three-year cycles covering all ISO 50001 certified legal operating subsidiaries.,False
+NEG-0117,methodology,Materiality matrix threshold cutoffs are established by joint agreement between the Sustainability Steering Committee and the Executive Board.,False
+NEG-0118,methodology,"Stakeholder engagement interviews for double materiality involve representatives from labor unions, local municipalities, and key institutional investors.",False
+NEG-0119,methodology,Climate transition plan Capex taxonomy tracking is integrated into the enterprise resource planning capital appropriation workflow.,False
+NEG-0120,methodology,Scope 2 green power purchase contractual terms are reviewed by legal counsel to ensure compliance with RE100 technical criteria.,False
+NEG-0121,boilerplate,This sustainability report contains statements that constitute forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995.,False
+NEG-0122,boilerplate,"Forward-looking statements involve inherent risks and uncertainties, many of which are beyond the company's ability to control or accurately predict.",False
+NEG-0123,boilerplate,"Actual future financial performance, carbon abatement progress, and operational capacity may differ materially from expectations expressed in this publication.",False
+NEG-0124,boilerplate,"Words such as believe, anticipate, project, intend, estimate, forecast, strategy, expect, and future identify forward-looking statements.",False
+NEG-0125,boilerplate,"The information presented in this report speaks only as of the date of publication, and the company undertakes no obligation to update any statement.",False
+NEG-0126,boilerplate,"Statements regarding future capital allocation, technology readiness levels, and market entry schedules are subject to market conditions and regulatory approval.",False
+NEG-0127,boilerplate,Nothing contained in this document shall constitute an offer to sell or a solicitation of an offer to buy any securities of the corporation.,False
+NEG-0128,boilerplate,Investors are cautioned not to place undue reliance on forward-looking statements when making investment or divestment decisions.,False
+NEG-0129,boilerplate,The operational feasibility of planned green hydrogen projects depends upon the timely availability of electrical transmission infrastructure and subsidized power tariffs.,False
+NEG-0130,boilerplate,"Decarbonization capital estimates are based on engineering cost studies that remain subject to inflation, supply chain bottlenecks, and contractor availability.",False
+NEG-0131,boilerplate,"Achieving future zero-emission milestones is contingent upon legislative support, international carbon border adjustment mechanisms, and commercial carbon capture networks.",False
+NEG-0132,boilerplate,Third-party trademarks and brand logos displayed herein are the registered intellectual property of their respective corporate owners.,False
+NEG-0133,boilerplate,References to external web portals and non-governmental organization frameworks are provided solely for navigation and informational convenience.,False
+NEG-0134,boilerplate,"The company does not endorse, guarantee, or assume legal liability for the accuracy of information published on external third-party internet sites.",False
+NEG-0135,boilerplate,Independent limited assurance reports provide negative assurance and do not constitute an audit opinion under International Standards on Auditing.,False
+NEG-0136,boilerplate,The liability of the independent assurance provider is strictly governed by the contractual terms agreed upon in the master service engagement agreement.,False
+NEG-0137,boilerplate,Statutory financial reporting figures take precedence over sustainability report estimates in the event of any discrepancies or conflicting interpretations.,False
+NEG-0138,boilerplate,The supervisory board and executive management disclaim any liability for damages resulting from reliance placed upon voluntary non-financial disclosures.,False
+NEG-0139,boilerplate,"Forward-looking statements do not reflect the potential impact of mergers, acquisitions, joint ventures, or asset sales that may be announced after publication.",False
+NEG-0140,boilerplate,"Risks associated with environmental compliance include stringent regional effluent standards, evolving waste disposal permits, and potential litigation.",False
+NEG-0141,boilerplate,"Failure to obtain or renew environmental operating licenses could lead to mandatory facility shutdowns, fines, or operational curtailments.",False
+NEG-0142,boilerplate,"Geopolitical conflicts, trade restrictions, and tariff renegotiations may adversely affect the availability and pricing of imported metallurgical scrap.",False
+NEG-0143,boilerplate,"Changes in currency exchange rates between the euro, US dollar, and yen could impact capital expenditure projections for imported rolling mill equipment.",False
+NEG-0144,boilerplate,"Physical climate risks, including severe flooding, drought, and extreme heatwaves, could disrupt inland barge logistics and cooling water intakes.",False
+NEG-0145,boilerplate,Transition risks related to carbon pricing mechanisms could result in increased operating costs if free emission allowances are phased out.,False
+NEG-0146,boilerplate,"No representation or warranty, express or implied, is given as to the fairness, accuracy, completeness, or correctness of the information contained herein.",False
+NEG-0147,boilerplate,"Any reproduction, distribution, or republication of this material without prior written authorization from the corporate communications department is prohibited.",False
+NEG-0148,boilerplate,"This document does not constitute tax, accounting, investment, or legal advice to any individual or corporate entity.",False
+NEG-0149,boilerplate,Historical performance figures and safety indicators discussed in this report are not necessarily indicative of future performance trends.,False
+NEG-0150,boilerplate,Statements regarding regulatory alignment are based upon executive interpretation of published administrative directives as of the reporting date.,False
+NEG-0151,boilerplate,Future greenhouse gas reduction targets remain subject to periodic review and adjustment based on technological advancements and economic viability.,False
+NEG-0152,boilerplate,"The company reserves the right to amend reporting boundaries, methodologies, and emission factor databases in subsequent annual publications.",False
+NEG-0153,boilerplate,Descriptions of collaborative industry roadmaps and public-private partnerships do not represent legally binding contractual commitments.,False
+NEG-0154,boilerplate,"Neither the corporation nor its officers assume responsibility for errors, omissions, or misstatements that may arise during report drafting and data aggregation.",False
+NEG-0155,boilerplate,"This publication should be read in conjunction with the official annual report, Form 20-F, and statutory accounts filed with national securities regulators.",False
+NEG-0156,boilerplate,Inherent limitations exist in calculating greenhouse gas emissions due to scientific uncertainty in empirical emission factors and global warming potentials.,False
+NEG-0157,boilerplate,Forward-looking carbon intensity estimates depend heavily on customer adoption rates for low-emission premium product offerings.,False
+NEG-0158,boilerplate,Expectations regarding renewable power purchase contract execution are subject to bilateral counterparty credit negotiations and grid interconnection approvals.,False
+NEG-0159,boilerplate,Anticipated benefits from technological modernization initiatives may not materialize if commercial implementation encounters unpredicted operational hurdles.,False
+NEG-0160,boilerplate,The company is under no legal obligation to publicly announce revisions to forward-looking statements reflecting events or circumstances occurring after this date.,False
+NEG-0161,boilerplate,Disclosures regarding supplier compliance with the code of conduct are based on self-certifications and third-party audit samples.,False
+NEG-0162,boilerplate,References to the United Nations Sustainable Development Goals are intended to illustrate strategic thematic alignment and do not imply formal UN endorsement.,False
+NEG-0163,boilerplate,The corporation operates in heavily regulated jurisdictions where regulatory compliance audits may result in administrative sanctions or civil penalties.,False
+NEG-0164,boilerplate,Certain operational data points are provisional and subject to adjustment upon completion of final statutory audit procedures.,False
+NEG-0165,boilerplate,Estimates of carbon abatement costs per metric ton are indicative and sensitive to prevailing global scrap metal and direct reduced iron price spreads.,False
+NEG-0166,boilerplate,Descriptions of research alliances with technical universities do not confer commercial licensing rights to third parties.,False
+NEG-0167,boilerplate,The board of directors is responsible for establishing governance frameworks to oversee non-financial disclosures and stakeholder communications.,False
+NEG-0168,boilerplate,The governance of sustainability risks is integrated into the enterprise risk management architecture overseen by the audit committee.,False
+NEG-0169,boilerplate,"This document has been translated into multiple languages; in the event of linguistic ambiguities, the original English version shall prevail.",False
+NEG-0170,boilerplate,Forward-looking financial expectations assume the stability of raw material supply contracts and baseline energy utility arrangements.,False
+NEG-0171,boilerplate,Statements regarding energy efficiency improvements reflect modeled theoretical savings under optimal operating loads.,False
+NEG-0172,boilerplate,Projections regarding circular scrap utilization are contingent on regional scrap shredder processing capabilities and purity levels.,False
+NEG-0173,boilerplate,Statements concerning customer decarbonization partnerships do not constitute minimum off-take agreements or sales volume guarantees.,False
+NEG-0174,boilerplate,The board of directors reviews significant corporate sustainability disclosures prior to publication but does not warrant zero errors.,False
+NEG-0175,boilerplate,The company disclaims any responsibility for typographical errors or layout distortions resulting from document conversion into digital publishing formats.,False
+NEG-0176,boilerplate,Forward-looking capital expenditure allocations represent intended management appropriations subject to annual board re-approval.,False
+NEG-0177,boilerplate,Uncertainties surrounding grid modernization timelines may influence the operational phasing of planned electric arc furnace installations.,False
+NEG-0178,boilerplate,Potential changes in environmental liability regulations could impose retrospective decontamination obligations on decommissioned foundry sites.,False
+NEG-0179,boilerplate,Statements regarding the market penetration of low-carbon product brands depend upon macroeconomic demand and international steel pricing.,False
+NEG-0180,boilerplate,The information disclosed in this report has not been prepared in accordance with US SEC non-GAAP financial disclosure guidelines.,False
+NEG-0181,boilerplate,The corporation makes no representation regarding whether non-financial metrics conform to specific investor-mandated exclusion screens.,False
+NEG-0182,boilerplate,Forward-looking workforce restructuring statements are subject to consultations with regional works councils and labor union representatives.,False
+NEG-0183,boilerplate,"Forward-looking scenario analyses are hypothetical exercises designed to test organizational resilience, not predictions of future outcomes.",False
+NEG-0184,boilerplate,Statements concerning public subsidy funding are conditional upon administrative grant agreements and European Commission state-aid clearances.,False
+NEG-0185,boilerplate,Disclosures regarding supply chain greenhouse gas emissions rely upon estimates and secondary industry database proxies.,False
+NEG-0186,boilerplate,"The corporate logo, brand trademarks, and proprietary metallurgy product designations are protected under international trademark law.",False
+NEG-0187,boilerplate,External stakeholder feedback gathered during materiality surveys does not obligate the company to modify strategic priorities.,False
+NEG-0188,boilerplate,Forward-looking logistics optimization plans depend on river water levels and commercial rail infrastructure reliability.,False
+NEG-0189,boilerplate,Calculations of avoided downstream emissions are theoretical and should not be construed as verified carbon offset credits.,False
+NEG-0190,boilerplate,"Nothing in this publication should be considered an invitation to subscribe for, purchase, or dispose of securities in any jurisdiction.",False
+NEG-0191,boilerplate,The internal audit department provides independent assurance to the board regarding the effectiveness of corporate internal control systems.,False
+NEG-0192,boilerplate,Statements concerning community development commitments are subject to annual budgetary review and municipal joint venture approvals.,False
+NEG-0193,boilerplate,Descriptions of corporate ethics grievance mechanisms do not waive any legal remedies or statutory rights of complainants.,False
+NEG-0194,boilerplate,Projections regarding water recycling closed-loop systems are subject to civil engineering permits and seasonal precipitation patterns.,False
+NEG-0195,boilerplate,Third-party benchmark assessments and credit ratings are compiled by independent agencies and are subject to their proprietary methodologies.,False
+NEG-0196,boilerplate,The company does not guarantee that its environmental management practices will insulate it from future climate-related litigation.,False
+NEG-0197,boilerplate,Future renewable energy generation output estimates are based on long-term regional solar irradiance and wind velocity meteorological models.,False
+NEG-0198,boilerplate,Disclosures regarding sustainable financing frameworks do not constitute an offering circular or prospectus under European capital market directives.,False
+NEG-0199,boilerplate,The corporation reserves the right to retire or amend specific key performance indicators if reporting standards evolve.,False
+NEG-0200,boilerplate,Forward-looking human capital statements assume the continued retention of specialized engineering and metallurgical personnel.,False
+NEG-0201,boilerplate,Descriptions of pilot-scale carbon capture projects should not be interpreted as demonstrations of commercial-scale economic viability.,False
+NEG-0202,boilerplate,Statements regarding compliance with voluntary industry standards do not confer legal causes of action upon third-party beneficiaries.,False
+NEG-0203,boilerplate,The board of directors reviews executive compliance with corporate governance charters during quarterly supervisory meetings.,False
+NEG-0204,boilerplate,Future hazardous waste diversion rates depend on regional availability of licensed thermal treatment and hydrometallurgical recycling facilities.,False
+NEG-0205,boilerplate,The company makes no commitment to maintain specific corporate credit or ESG ratings assigned by external scoring agencies.,False
+NEG-0206,boilerplate,Disclosures regarding scope 3 emissions data quality tiers conform to the data quality matrix in the GHG Protocol Scope 3 Guidance.,False
+NEG-0207,boilerplate,Forward-looking raw material sourcing strategies depend on the political stability of mining operations in exporting countries.,False
+NEG-0208,boilerplate,All information in this report is provided on an as-is basis without warranty of any kind regarding completeness or timeliness.,False
+NEG-0209,boilerplate,Projections regarding automated slag foaming optimization are subject to software algorithm tuning and sensor lifespan in harsh environments.,False
+NEG-0210,boilerplate,Statements regarding bio-charcoal substitution for metallurgical coke in blast furnaces represent ongoing exploratory technical evaluations.,False
+NEG-0211,boilerplate,The corporation disclaims liability for commercial decisions taken by suppliers or customers based upon disclosures in this document.,False
+NEG-0212,boilerplate,Future research priorities are reviewed annually by the Chief Technology Officer in consultation with academic advisory boards.,False
+NEG-0213,boilerplate,Corporate responses to non-governmental organization benchmarking questionnaires are based on publicly accessible corporate documentation.,False
+NEG-0214,boilerplate,Nothing in this report shall alter or supersede contractual warranty terms applicable to delivered commercial steel products.,False
+NEG-0215,boilerplate,Statements regarding biodiversity net positive impact are subject to the establishment of standardized regional ecological accounting baselines.,False
+NEG-0216,boilerplate,Forward-looking operational expenditure forecasts do not include potential increases in statutory industrial insurance premiums.,False
+NEG-0217,boilerplate,The corporate secretary serves as the custodian of executive committee minutes and statutory corporate filings.,False
+NEG-0218,boilerplate,Statements regarding regional economic multipliers and indirect job creation are based on academic macroeconomic input-output models.,False
+NEG-0219,boilerplate,The publication of this sustainability report complies with voluntary non-financial disclosure recommendations of national stock exchanges.,False
+NEG-0220,boilerplate,The executive committee approves the release of corporate sustainability publications following consultation with external legal counsel.,False
+NEG-0221,table_header,Table 1.1: Historical energy consumption by primary fuel source across European manufacturing operations.,False
+NEG-0222,table_header,Figure 2.3: Year-on-year trend in Scope 1 and Scope 2 market-based carbon dioxide equivalent emissions.,False
+NEG-0223,table_header,Exhibit 4.2: Consolidated raw water withdrawal and effluent discharge volumes by catchment basin.,False
+NEG-0224,table_header,Table 3.4: Lost time injury frequency rate and total recordable incident rate broken down by business segment.,False
+NEG-0225,table_header,Figure 5.1: Regional distribution of full-time equivalent employees across operating foundries and sales subsidiaries.,False
+NEG-0226,table_header,Table 6.2: Capital expenditures and operational expenditures aligned with EU Taxonomy climate change mitigation criteria.,False
+NEG-0227,table_header,Exhibit 7.3: Summary of hazardous and non-hazardous waste generation by disposal method.,False
+NEG-0228,table_header,Figure 8.4: Percentage breakdown of purchased electricity sourced from verified grid-connected renewable power contracts.,False
+NEG-0229,table_header,"Table 9.1: Board of directors demographic profile including gender representation, tenure, and independent status.",False
+NEG-0230,table_header,Exhibit 10.5: Product carbon footprint cradle-to-gate lifecycle comparison across structural steel grades.,False
+NEG-0231,table_header,"Note 1: In accordance with reporting guidelines, figures for divested facilities are excluded from historical comparative totals.",False
+NEG-0232,table_header,Note 2: Scope 2 location-based emissions are calculated using national grid average emission factors published by the IEA.,False
+NEG-0233,table_header,Note 3: Restatement of 2022 baseline figures reflects the structural inclusion of newly acquired rolling mill assets.,False
+NEG-0234,table_header,Note 4: Water consumption data excludes closed-loop cooling circuits where evaporative losses are below measurable thresholds.,False
+NEG-0235,table_header,Note 5: Contractor working hours are estimated where gate access turnstile electronic records were temporarily unavailable.,False
+NEG-0236,table_header,Note 6: Renewable energy certificates retired on behalf of operations are registered in the regional tracking database.,False
+NEG-0237,table_header,"Note 7: Hazardous waste volumes include spent pickling acid, paint sludge, and contaminated maintenance absorbent materials.",False
+NEG-0238,table_header,Note 8: Capital expenditure totals reported in this table align with Note 14 of the audited consolidated financial statements.,False
+NEG-0239,table_header,Note 9: Training metrics encompass formal instructional courses logged within the human resources enterprise portal.,False
+NEG-0240,table_header,Note 10: Slag recycling rates reflect deliveries to road construction contractors and licensed cement manufacturers.,False
+NEG-0241,table_header,"For additional disclosures regarding governance oversight, please refer to the Corporate Governance Statement on pages 84 to 92.",False
+NEG-0242,table_header,"For detailed descriptions of accounting policies and consolidation rules, see Note 2 to the Consolidated Financial Statements.",False
+NEG-0243,table_header,A comprehensive reconciliation of non-GAAP financial metrics is available in the supplementary investor presentation on our website.,False
+NEG-0244,table_header,"For further information concerning environmental remediation provisions, refer to Note 28 of the Annual Report.",False
+NEG-0245,table_header,Detailed definitions of occupational safety incident classifications can be inspected in the Global Safety Standard manual.,False
+NEG-0246,table_header,Refer to Appendix B on page 142 for the complete Global Reporting Initiative (GRI) content index.,False
+NEG-0247,table_header,See Appendix C for the Sustainability Accounting Standards Board (SASB) Iron & Steel Producers disclosure table.,False
+NEG-0248,table_header,A full cross-reference index aligned with the Task Force on Climate-related Financial Disclosures (TCFD) is provided on page 150.,False
+NEG-0249,table_header,The independent practitioner's limited assurance report issued by PricewaterhouseCoopers is reproduced on pages 154 through 156.,False
+NEG-0250,table_header,"For inquiries regarding corporate sustainability programs, contact the Investor Relations and ESG Office via the address on the back cover.",False
+NEG-0251,table_header,"Table 2.1: Key performance indicator summary scorecard across environment, social, and corporate governance dimensions.",False
+NEG-0252,table_header,Figure 3.2: Schematic overview of direct reduction and electric arc furnace technological flowsheets.,False
+NEG-0253,table_header,Exhibit 1.4: Materiality matrix illustrating stakeholder prioritization versus enterprise financial impact ratings.,False
+NEG-0254,table_header,Table 4.5: Total greenhouse gas emissions broken down by individual Scope 3 upstream and downstream categories.,False
+NEG-0255,table_header,Figure 6.1: Water risk heat map categorizing operating assets located in areas of high baseline water stress.,False
+NEG-0256,table_header,"Table 7.2: Air pollutant emissions inventory detailing sulfur dioxide, nitrogen oxides, and fine particulate matter.",False
+NEG-0257,table_header,"Exhibit 8.1: Workforce turnover rates categorized by age demographic, gender, and regional operating cluster.",False
+NEG-0258,table_header,Table 9.4: Collective bargaining agreement coverage and trade union representation by country of operation.,False
+NEG-0259,table_header,Figure 10.2: Capital expenditure allocation roadmap across decarbonization projects through financial year 2030.,False
+NEG-0260,table_header,Table 11.3: Summary of supplier code of conduct audit findings and corrective action plan implementation status.,False
+NEG-0261,table_header,Chart 1.1: Proportion of steel scrap utilized across electric arc furnace versus blast furnace steelmaking routes.,False
+NEG-0262,table_header,Chart 2.2: Five-year historical trend in specific natural gas consumption per ton of finished billet.,False
+NEG-0263,table_header,"Chart 3.3: Total direct economic value generated and distributed across employees, suppliers, and governments.",False
+NEG-0264,table_header,Chart 4.4: Distribution of executive incentive compensation tied directly to audited non-financial ESG metrics.,False
+NEG-0265,table_header,Chart 5.5: Ratio of recycled refractories and ladle linings returned to refractory manufacturing partners.,False
+NEG-0266,table_header,Footnote a: Data points for 2021 have been adjusted to reflect updated DEFRA logistics conversion factors.,False
+NEG-0267,table_header,Footnote b: Excludes non-manufacturing commercial sales offices with fewer than twenty permanent staff members.,False
+NEG-0268,table_header,Footnote c: Emissions from emergency diesel backup generators are excluded on the grounds of immateriality.,False
+NEG-0269,table_header,Footnote d: Direct reduced iron scrap equivalent ratios reflect theoretical iron yield based on metallic charge analysis.,False
+NEG-0270,table_header,Footnote e: Employee engagement survey response rate achieved eighty-four percent across eligible operating personnel.,False
+NEG-0271,table_header,"Appendix 1: Detailed breakdown of greenhouse gas reporting perimeters, organizational boundaries, and operational control.",False
+NEG-0272,table_header,"Appendix 2: Standard conversion factors applied for volume, mass, and thermal energy equivalence calculations.",False
+NEG-0273,table_header,Appendix 3: List of all corporate legal subsidiaries included within the consolidated non-financial reporting scope.,False
+NEG-0274,table_header,"Appendix 4: Inventory of active environmental permits, regulatory licenses, and ISO certification validity dates.",False
+NEG-0275,table_header,"Appendix 5: Glossary of technical metallurgical terminology, environmental abbreviations, and chemical acronyms.",False
+NEG-0276,table_header,"Table 12.1: Overview of corporate board committees, member attendance records, and annual meeting frequencies.",False
+NEG-0277,table_header,"Table 12.2: Executive committee compensation structure detailing fixed remuneration, annual bonus, and performance shares.",False
+NEG-0278,table_header,"Table 13.1: Energy efficiency project inventory detailing capital outlay, implemented technology, and projected payback.",False
+NEG-0279,table_header,"Table 13.2: Comprehensive list of certified management systems across manufacturing sites under ISO 9001, 14001, and 45001.",False
+NEG-0280,table_header,"Table 14.1: Breakdown of employee grievance submissions by category, investigation outcome, and remedial actions taken.",False
+NEG-0281,table_header,"Figure 11.1: Circular economy flow diagram illustrating internal recycling of scrap, mill scale, and flue dust.",False
+NEG-0282,table_header,Figure 11.2: Enterprise risk management governance architecture detailing escalation pathways to the executive board.,False
+NEG-0283,table_header,Figure 12.3: Carbon capture and storage supply chain flowsheet from absorption columns to deep geological injection wells.,False
+NEG-0284,table_header,Figure 13.4: Employee age distribution pyramid illustrating generational demographics across technical disciplines.,False
+NEG-0285,table_header,"Figure 14.5: Global supply chain map showing geographic origin of primary iron ore, scrap, and metallurgical coal inputs.",False
+NEG-0286,table_header,Note 11: Electric arc furnace dust is transferred exclusively to authorized external Waelz kiln recycling facilities.,False
+NEG-0287,table_header,Note 12: Specific freshwater withdrawal intensity is calculated per metric ton of cast liquid steel.,False
+NEG-0288,table_header,Note 13: Lost time injury statistics include subcontractors operating under direct supervision of mill management.,False
+NEG-0289,table_header,Note 14: Gender diversity data is compiled from human resources records as of December thirty-first.,False
+NEG-0290,table_header,"Note 15: Corporate philanthropy figures reflect charitable cash donations, matching gifts, and employee volunteer hours.",False
+NEG-0291,table_header,Note 16: Research and development project costs conform to criteria outlined in International Accounting Standard 38.,False
+NEG-0292,table_header,Note 17: Emission figures for Scope 1 include emissions from company-owned corporate aviation assets.,False
+NEG-0293,table_header,Note 18: Recycled content certificates are issued by independent accredited inspection and certification bodies.,False
+NEG-0294,table_header,Note 19: All currency values in this section are expressed in thousands of euros unless otherwise explicitly designated.,False
+NEG-0295,table_header,Note 20: Baseline greenhouse gas emissions have been reviewed in accordance with the Science Based Targets initiative criteria.,False
+NEG-0296,table_header,"Table 15.1: Summary of community engagement initiatives, local infrastructure projects, and educational bursaries.",False
+NEG-0297,table_header,"Table 15.2: Water balance table displaying inputs from all sources, internal recycling loops, and permitted discharges.",False
+NEG-0298,table_header,"Table 16.1: Breakdown of Scope 3 emissions associated with capital goods, categorized by major engineering contracts.",False
+NEG-0299,table_header,"Table 16.2: Overview of raw material supplier sustainability assessment ratings, on-site audits, and non-conformance notices.",False
+NEG-0300,table_header,"Table 17.1: Summary of patent portfolio filings, proprietary alloy formulations, and technology licensing agreements.",False
+NEG-0301,table_header,"Chart 6.1: Breakdown of raw material transportation modalities by maritime shipping, rail freight, and road haulage.",False
+NEG-0302,table_header,Chart 6.2: Trend in continuous casting yield efficiency reflecting finished billet production relative to liquid steel charge.,False
+NEG-0303,table_header,Chart 7.1: Comparison of corporate greenhouse gas intensity against World Steel Association international benchmark averages.,False
+NEG-0304,table_header,"Chart 7.2: Breakdown of workforce headcount by employment contract type, including permanent, temporary, and apprentice agreements.",False
+NEG-0305,table_header,"Chart 8.1: Distribution of hazardous waste management methods between licensed incineration, physicochemical treatment, and landfill.",False
+NEG-0306,table_header,Footnote f: Figures for electrical grid emission intensity are based on residual mix factors published by the Association of Issuing Bodies.,False
+NEG-0307,table_header,Footnote g: Excludes commercial research and development laboratories located outside manufacturing perimeter boundaries.,False
+NEG-0308,table_header,Footnote h: Safety incident data includes all regional manufacturing subsidiaries acquired prior to October first of the reporting year.,False
+NEG-0309,table_header,Footnote i: Specific electricity consumption includes all auxiliary rolling mill cooling water pump and air compression loads.,False
+NEG-0310,table_header,Footnote j: Employee retention rates are monitored through standard quarterly talent management committee dashboards.,False
+NEG-0311,table_header,See page 36 for an expanded discussion of corporate double materiality assessment methodology and scoring thresholds.,False
+NEG-0312,table_header,Refer to page 58 for detailed explanations of Scope 3 upstream logistics emission calculation methodologies.,False
+NEG-0313,table_header,Consult the separate Investor ESG Data Sheet available in spreadsheet format on the corporate web portal.,False
+NEG-0314,table_header,See Note 32 of the statutory financial report for details concerning legal claims and contingent environmental liabilities.,False
+NEG-0315,table_header,Review page 112 for the executive management commentary on regional steel market conditions and carbon allowance prices.,False
+NEG-0316,table_header,Refer to page 126 for the formal statement of compliance with the UK Corporate Governance Code.,False
+NEG-0317,table_header,Consult Appendix D for a comprehensive index of European Sustainability Reporting Standards (ESRS) datapoints.,False
+NEG-0318,table_header,See page 98 for an overview of the global whistleblower hotline reporting channels and anti-retaliation protections.,False
+NEG-0319,table_header,Refer to the corporate website for downloadable copies of active ISO environmental and quality management certificates.,False
+NEG-0320,table_header,Review page 44 for details concerning stakeholder consultation sessions held with regional municipal authorities.,False
+NEG-0321,aspirational,We believe that responsible manufacturing and proactive decarbonization are critical prerequisites for long-term industrial competitiveness.,False
+NEG-0322,aspirational,The corporation aims to continuously enhance its environmental performance across all manufacturing operations in the decades ahead.,False
+NEG-0323,aspirational,Executive leadership remains committed to exploring disruptive low-carbon steelmaking technologies that can accelerate industrial transformation.,False
+NEG-0324,aspirational,"We strive to cultivate a collaborative corporate culture rooted in mutual respect, continuous learning, and uncompromising workplace safety.",False
+NEG-0325,aspirational,"Our vision is to serve as an industry benchmark in transparent corporate governance, environmental stewardship, and ethical leadership.",False
+NEG-0326,aspirational,Management intends to actively evaluate strategic opportunities to expand direct reduced iron capacity powered by green hydrogen.,False
+NEG-0327,aspirational,We seek to maintain proactive and constructive dialogue with surrounding local communities across all our manufacturing sites.,False
+NEG-0328,aspirational,The organization aspires to eliminate operational workplace fatalities through continuous behavioral safety leadership training.,False
+NEG-0329,aspirational,"We are committed to fostering diversity, equity, and inclusion across all tiers of management and operational teams.",False
+NEG-0330,aspirational,Our goal is to remain the preferred partner for downstream industrial customers seeking certified sustainable steel solutions.,False
+NEG-0331,aspirational,We intend to explore collaborative research partnerships with academic institutions to investigate advanced carbon capture solutions.,False
+NEG-0332,aspirational,The company endeavors to optimize resource circularity by seeking novel commercial outlets for metallurgical co-products and slag.,False
+NEG-0333,aspirational,"We aspire to create long-term shared value for our shareholders, employees, commercial partners, and surrounding communities.",False
+NEG-0334,aspirational,Management remains dedicated to reinforcing our human rights due diligence architecture throughout our global procurement network.,False
+NEG-0335,aspirational,We plan to evaluate feasibility studies concerning the installation of on-site solar photovoltaic arrays across warehouse rooftops.,False
+NEG-0336,aspirational,Our ambition is to lead the technological evolution toward fossil-free metallurgical processing as green hydrogen infrastructure emerges.,False
+NEG-0337,aspirational,We strive to integrate environmental considerations systematically into every phase of corporate capital allocation and project engineering.,False
+NEG-0338,aspirational,The corporation intends to participate constructively in public policy consultations regarding regional carbon border adjustment regulations.,False
+NEG-0339,aspirational,We aim to inspire and empower our workforce through accredited professional development programs and leadership pathways.,False
+NEG-0340,aspirational,Management seeks to strengthen enterprise cyber resilience through continuous employee training and threat detection architectures.,False
+NEG-0341,aspirational,We believe that maintaining robust ethical standards is foundational to preserving our corporate social license to operate.,False
+NEG-0342,aspirational,The company endeavors to expand the commercial availability of ultra-low carbon steel grades to support automotive decarbonization.,False
+NEG-0343,aspirational,We strive to implement proactive water stewardship practices that safeguard shared hydrological resources in water-stressed basins.,False
+NEG-0344,aspirational,Our aspiration is to design modular manufacturing processes that can seamlessly adapt to emerging green power configurations.,False
+NEG-0345,aspirational,"We are dedicated to supporting community welfare through strategic investments in regional education, healthcare, and sports infrastructure.",False
+NEG-0346,aspirational,Management intends to collaborate closely with logistics partners to explore the deployment of electric and hydrogen-powered freight trucks.,False
+NEG-0347,aspirational,We seek to advance circular economy practices by maximizing the proportion of recycled scrap utilized in continuous casting lines.,False
+NEG-0348,aspirational,The organization aims to continually refine its double materiality framework to reflect emerging stakeholder priorities and regulatory shifts.,False
+NEG-0349,aspirational,We aspire to establish a corporate culture where every employee feels empowered to report safety concerns without fear of reprisal.,False
+NEG-0350,aspirational,Our strategy envisions the progressive replacement of fossil-based injection coals with sustainable biomass and bio-charcoal alternatives.,False
+NEG-0351,aspirational,"We believe that transparent sustainability reporting builds institutional trust with financial markets, customers, and civil society.",False
+NEG-0352,aspirational,Management plans to investigate the technical feasibility of capturing industrial waste heat to support municipal district heating grids.,False
+NEG-0353,aspirational,We strive to enhance our biodiversity stewardship across all properties through ecological restoration and habitat conservation projects.,False
+NEG-0354,aspirational,Our ambition is to ensure that all corporate subsidiaries operate in strict accordance with the highest international environmental standards.,False
+NEG-0355,aspirational,We intend to engage proactively with raw material suppliers to encourage the adoption of science-based greenhouse gas reduction targets.,False
+NEG-0356,aspirational,"The company seeks to drive operational excellence through digital transformation, predictive maintenance, and real-time process monitoring.",False
+NEG-0357,aspirational,We are committed to maintaining a robust balance sheet while strategically investing in transformative decarbonization technologies.,False
+NEG-0358,aspirational,"Management aspires to foster long-term commercial relationships grounded in integrity, fair dealing, and transparent contractual terms.",False
+NEG-0359,aspirational,We aim to actively promote the reuse of secondary steel by-products to minimize waste generation and support regional circularity.,False
+NEG-0360,aspirational,"Our vision is to empower young talent through comprehensive apprenticeship schemes, graduate training programs, and mentorship networks.",False
+NEG-0361,aspirational,We strive to ensure that executive decision-making systematically balances economic returns with environmental and social responsibilities.,False
+NEG-0362,aspirational,The organization plans to assess the viability of deploying small-scale electrolyzer systems at integrated manufacturing facilities.,False
+NEG-0363,aspirational,We intend to maintain an ongoing dialogue with trade unions to facilitate a just and socially responsible industrial transition.,False
+NEG-0364,aspirational,"Our goal is to continually enhance the energy efficiency of our secondary metallurgy, reheat furnaces, and cold rolling complexes.",False
+NEG-0365,aspirational,"We believe that investing in employee health, mental wellbeing, and ergonomic safety generates substantial long-term organizational value.",False
+NEG-0366,aspirational,Management endeavors to ensure that all marketing communications accurately represent the verified environmental attributes of our products.,False
+NEG-0367,aspirational,We seek to expand our portfolio of certified environmental product declarations across all commercial long and flat steel offerings.,False
+NEG-0368,aspirational,The corporation aspires to contribute meaningfully to global climate mitigation while sustaining economic growth and manufacturing employment.,False
+NEG-0369,aspirational,We are dedicated to upholding the principles of the United Nations Global Compact across all operational jurisdictions.,False
+NEG-0370,aspirational,Our strategy emphasizes the continuous modernization of rolling mills to improve product tolerances and minimize yield losses.,False
+NEG-0371,aspirational,We intend to work collaboratively with industry associations to establish harmonized methodologies for low-carbon steel benchmarking.,False
+NEG-0372,aspirational,Management plans to explore the potential for installing dry slag granulation technology to recover high-temperature sensible heat.,False
+NEG-0373,aspirational,We strive to maintain an open and transparent relationship with regulatory environmental authorities across all operating regions.,False
+NEG-0374,aspirational,Our vision includes developing innovative high-strength alloy compositions that enable lightweighting in automotive manufacturing.,False
+NEG-0375,aspirational,We seek to embed circular design principles into product research to ensure high recyclability at the end of product life.,False
+NEG-0376,aspirational,The company aims to enhance supplier compliance audits through independent third-party assessments of mining partners.,False
+NEG-0377,aspirational,We are committed to supporting regional biodiversity initiatives through tree planting campaigns on non-operational company land.,False
+NEG-0378,aspirational,Management envisions creating an agile corporate structure capable of navigating macroeconomic volatility and energy market transitions.,False
+NEG-0379,aspirational,We endeavor to ensure that corporate philanthropic donations address the most pressing social challenges facing our host communities.,False
+NEG-0380,aspirational,Our ambition is to maintain zero-fatality performance across all operational facilities through uncompromising safety leadership.,False
+NEG-0381,aspirational,We strive to continuously benchmark our human resources policies against international best practice to ensure fair remuneration.,False
+NEG-0382,aspirational,The organization plans to investigate potential commercial partnerships for utilizing industrial off-gases in chemical synthesis.,False
+NEG-0383,aspirational,We believe that digital tracking of raw material provenance enhances supply chain transparency and customer confidence.,False
+NEG-0384,aspirational,Management intends to maintain active involvement in technical working groups addressing responsible steel manufacturing standards.,False
+NEG-0385,aspirational,We seek to reduce our reliance on virgin iron ore by expanding partnerships with regional scrap collectors and metal processors.,False
+NEG-0386,aspirational,Our goal is to build an inclusive workforce where diverse backgrounds and perspectives are valued and celebrated.,False
+NEG-0387,aspirational,We are dedicated to safeguarding intellectual property rights that underpin our proprietary metallurgical inventions.,False
+NEG-0388,aspirational,The company endeavors to implement comprehensive water risk mitigation plans across all manufacturing assets in vulnerable regions.,False
+NEG-0389,aspirational,We strive to maintain high standards of business integrity by strictly enforcing corporate anti-corruption and bribery policies.,False
+NEG-0390,aspirational,Management plans to assess emerging technologies for microwave-assisted smelting and low-temperature electrolytic iron extraction.,False
+NEG-0391,aspirational,We aim to provide customers with detailed life-cycle carbon footprint data to assist them in achieving their scope 3 emissions goals.,False
+NEG-0392,aspirational,Our ambition is to cultivate long-term investor confidence through consistent execution of our declared capital allocation priorities.,False
+NEG-0393,aspirational,We believe that proactive community engagement mitigates social risks and strengthens mutual trust in our host regions.,False
+NEG-0394,aspirational,The corporation intends to continue supporting professional development opportunities for female engineers and operational leaders.,False
+NEG-0395,aspirational,We seek to explore the utilization of artificial intelligence algorithms to optimize furnace air-to-fuel ratios and cut fuel consumption.,False
+NEG-0396,aspirational,"Our strategy prioritizes the progressive electrification of mobile site vehicles, overhead cranes, and auxiliary handling equipment.",False
+NEG-0397,aspirational,We are committed to adhering to responsible tax management principles that support public services in the jurisdictions where we operate.,False
+NEG-0398,aspirational,Management envisions a future where integrated steelworks operate in symbiotic industrial balance with municipal energy systems.,False
+NEG-0399,aspirational,We endeavor to ensure that employee performance management processes transparently align individual contributions with corporate goals.,False
+NEG-0400,aspirational,Our vision involves positioning the company as an innovative technology leader capable of delivering high-performance advanced alloys.,False
+NEG-0401,aspirational,We strive to maintain comprehensive emergency response capabilities to protect personnel and surrounding communities during operational upsets.,False
+NEG-0402,aspirational,The organization aims to foster partnerships with regional trade colleges to ensure a continuous pipeline of skilled technical labor.,False
+NEG-0403,aspirational,We believe that proactive waste stream segregation at the source is the most effective mechanism for maximizing byproduct recycling.,False
+NEG-0404,aspirational,Management intends to evaluate advanced biological treatment solutions for neutralizing nitrogenous compounds in coke plant wastewater.,False
+NEG-0405,aspirational,We seek to expand our portfolio of customer co-development projects to engineer specialized steel solutions for offshore wind turbines.,False
+NEG-0406,aspirational,Our ambition is to uphold robust corporate governance structures that protect the legitimate interests of all commercial stakeholders.,False
+NEG-0407,aspirational,We are dedicated to supporting our operational workforce through comprehensive transition retraining as manufacturing automates.,False
+NEG-0408,aspirational,The company plans to participate in voluntary industrial energy conservation covenants negotiated with regional governments.,False
+NEG-0409,aspirational,We strive to maintain an open corporate dialogue regarding mental health awareness through regular internal communication campaigns.,False
+NEG-0410,aspirational,Management envisions continuous incremental improvements in blast furnace thermal efficiency while long-term transition technologies mature.,False
+NEG-0411,aspirational,"We believe that corporate reputation is built upon daily operational discipline, product quality, and ethical commercial transactions.",False
+NEG-0412,aspirational,The organization intends to monitor developments in geological carbon storage infrastructure across potential regional sequestration hubs.,False
+NEG-0413,aspirational,"We seek to ensure that corporate whistleblowing mechanisms remain accessible, confidential, and fully independent of executive management.",False
+NEG-0414,aspirational,"Our goal is to achieve seamless cross-functional collaboration between research, production, and commercial marketing departments.",False
+NEG-0415,aspirational,"We are committed to providing safe, comfortable, and modern occupational facilities for all operating plant personnel.",False
+NEG-0416,aspirational,Management plans to investigate the application of modular acoustic insulation barriers to minimize nighttime plant perimeter noise.,False
+NEG-0417,aspirational,We strive to optimize internal logistics routes to reduce diesel consumption by shunting locomotives within plant rail networks.,False
+NEG-0418,aspirational,Our ambition is to lead the manufacturing industry toward sustainable circularity while generating durable economic returns for investors.,False
+NEG-0419,aspirational,"We believe that addressing global environmental challenges requires systemic collaboration between industry, government, and society.",False
+NEG-0420,aspirational,The executive committee remains firmly resolved to steer the corporation through the upcoming industrial transition with integrity and ambition.,False
+NEG-0421,governance,The Board of Directors has established an Audit and Sustainability Committee to oversee financial and non-financial reporting integrity.,False
+NEG-0422,governance,The Governance and Nominating Committee reviews board composition annually to ensure an appropriate balance of technical and commercial expertise.,False
+NEG-0423,governance,Executive remuneration policies are formulated by the Compensation Committee and submitted to shareholders for advisory approval.,False
+NEG-0424,governance,"The supervisory board meets at least quarterly to evaluate strategic progress, operational performance, and enterprise risk management.",False
+NEG-0425,governance,"The Chief Executive Officer is supported by an Executive Committee comprising functional leaders from operations, finance, and legal.",False
+NEG-0426,governance,Corporate governance guidelines mandate that a majority of the Board of Directors shall qualify as independent non-executive directors.,False
+NEG-0427,governance,The Audit Committee maintains unrestricted direct access to external independent auditors and the internal corporate audit department.,False
+NEG-0428,governance,"Risk management frameworks encompass strategic, operational, financial, environmental, and reputational risks across all corporate divisions.",False
+NEG-0429,governance,"The enterprise risk committee conducts biannual reviews of emerging geopolitical, cyber, and climate transition vulnerabilities.",False
+NEG-0430,governance,Whistleblower complaints submitted through the anonymous third-party portal are routed directly to the Head of Corporate Compliance.,False
+NEG-0431,governance,"The Code of Business Conduct outlines mandatory ethical behavioral standards for all full-time, part-time, and contracted personnel.",False
+NEG-0432,governance,"All employees are required to complete mandatory annual training on anti-bribery, competition compliance, and trade sanctions.",False
+NEG-0433,governance,"The company maintains a strict zero-tolerance policy toward any form of workplace harassment, discrimination, or retaliatory action.",False
+NEG-0434,governance,"Supplier contracts incorporate mandatory compliance clauses regarding child labor, forced labor, and minimum wage legislation.",False
+NEG-0435,governance,The Procurement Department evaluates major suppliers through a standardized third-party ethical and environmental screening portal.,False
+NEG-0436,governance,Internal corporate audit conducts operational compliance reviews across all manufacturing sites on a rotating multi-year cycle.,False
+NEG-0437,governance,Corrective action plans generated from internal audit findings are tracked centrally and reported quarterly to the executive committee.,False
+NEG-0438,governance,"The Board of Directors conducts an annual formal self-evaluation to assess collective effectiveness, committee performance, and governance processes.",False
+NEG-0439,governance,Corporate securities trading policies prohibit directors and designated executives from engaging in short-term speculative share transactions.,False
+NEG-0440,governance,The Sustainability Steering Committee coordinates cross-functional execution of corporate decarbonization and resource stewardship roadmaps.,False
+NEG-0441,governance,"The Safety Leadership Council, chaired by the Chief Operating Officer, convenes monthly to review plant safety trends and incident reports.",False
+NEG-0442,governance,Emergency response protocols require immediate executive notification upon the occurrence of any high-potential environmental or safety event.,False
+NEG-0443,governance,The corporate treasury policy establishes strict counterparty credit risk limits and liquidity maintenance requirements.,False
+NEG-0444,governance,Tax management policies mandate that the corporation shall not engage in artificial tax avoidance structures or tax havens.,False
+NEG-0445,governance,The data privacy office ensures that all employee and customer information is processed in strict compliance with the European GDPR.,False
+NEG-0446,governance,"Cybersecurity protocols conform to international frameworks, including multi-factor authentication and continuous vulnerability testing.",False
+NEG-0447,governance,"The Corporate Communications department manages all formal media interactions, regulatory disclosures, and external press releases.",False
+NEG-0448,governance,"Investor relations conducts regular roadshows, quarterly earnings calls, and an annual capital markets day for institutional shareholders.",False
+NEG-0449,governance,"The Legal Department maintains corporate secretarial registers, trademark portfolios, and commercial litigation defense files.",False
+NEG-0450,governance,Environmental management committees at each operating mill report directly to the respective plant general manager and corporate EHS.,False
+NEG-0451,governance,The corporate delegation of authority matrix specifies capital expenditure approval thresholds for operational executives.,False
+NEG-0452,governance,"The Environmental Policy establishes mandatory guidelines for pollution prevention, waste minimization, and natural resource conservation.",False
+NEG-0453,governance,The Health and Safety Policy affirms that safe working conditions are an essential prerequisite for all manufacturing operations.,False
+NEG-0454,governance,"Human rights due diligence processes are overseen by a dedicated cross-functional working group including legal, procurement, and HR.",False
+NEG-0455,governance,"The Quality Management Committee monitors customer defect claims, surface quality rejections, and rolling mill yield deviations.",False
+NEG-0456,governance,Product stewardship reviews evaluate potential regulatory restrictions affecting chemical substances used in metal coating processes.,False
+NEG-0457,governance,The Research and Development Steering Group evaluates pilot technology project milestones before approving subsequent funding phases.,False
+NEG-0458,governance,Capital expenditure allocation procedures require that all major engineering projects undergo an internal carbon shadow price review.,False
+NEG-0459,governance,The Ethics and Compliance Committee reviews unresolved conflict-of-interest disclosures submitted by senior corporate officers.,False
+NEG-0460,governance,Commercial credit committees evaluate customer creditworthiness and set credit limits to mitigate accounts receivable default risks.,False
+NEG-0461,governance,The Enterprise Risk Management manual defines standardized risk scoring criteria based on probability and financial impact matrices.,False
+NEG-0462,governance,"Business continuity plans are maintained and tested annually for critical digital infrastructure, blast furnaces, and rolling complexes.",False
+NEG-0463,governance,The Remuneration Committee reviews executive performance metrics against peer group market benchmarks provided by external compensation consultants.,False
+NEG-0464,governance,Shareholder voting rights are exercised on a one-share-one-vote basis in accordance with corporate statutory articles of association.,False
+NEG-0465,governance,"The Corporate Secretary coordinates annual general meeting logistics, shareholder proxy voting, and statutory agenda publication.",False
+NEG-0466,governance,"Local plant liaison committees meet periodically with community leaders, emergency services, and municipal government representatives.",False
+NEG-0467,governance,"The Supplier Diversity Initiative encourages the inclusion of small, medium, and minority-owned enterprises within corporate supply chains.",False
+NEG-0468,governance,IT disaster recovery sites undergo annual simulation exercises to ensure seamless failover of production planning systems.,False
+NEG-0469,governance,The Energy Management Committee reviews regional power procurement strategies and wholesale electricity price hedging contracts.,False
+NEG-0470,governance,Environmental incident investigation protocols require root-cause analysis and the implementation of permanent corrective measures.,False
+NEG-0471,governance,The Board of Directors reviews the corporate dividend policy annually in light of capital expenditure requirements and free cash flow generation.,False
+NEG-0472,governance,Corporate governance charters are published openly on the corporate investor portal and updated to reflect legal developments.,False
+NEG-0473,governance,The Supervisory Board has established an independent advisory committee to review large-scale industrial decarbonization investments.,False
+NEG-0474,governance,"The Head of Sustainability reports directly to the Chief Executive Officer on regulatory developments, CSRD alignment, and target tracking.",False
+NEG-0475,governance,Workplace safety committees with equal representation from management and labor meet monthly at all operating manufacturing plants.,False
+NEG-0476,governance,Corporate sponsorship guidelines restrict charitable funding to registered non-profit organizations operating within plant communities.,False
+NEG-0477,governance,The Trade Sanctions Compliance Unit screens all international export sales orders against government denial lists.,False
+NEG-0478,governance,Anti-money laundering screening procedures are applied to all new commercial scrap metal vendors and material suppliers.,False
+NEG-0479,governance,"Corporate intellectual property committees oversee patent drafting, freedom-to-operate analyses, and trade secret protection.",False
+NEG-0480,governance,The Occupational Health Department conducts regular medical surveillance examinations for operating personnel exposed to noise and dust.,False
+NEG-0481,governance,Corporate hiring standards mandate non-discriminatory recruitment practices across all professional and production disciplines.,False
+NEG-0482,governance,"The Executive Committee holds weekly operational briefings to assess raw material procurement, order books, and mill scheduling.",False
+NEG-0483,governance,The Corporate Sustainability department coordinates third-party ESG rating agency submissions and investor questionnaire responses.,False
+NEG-0484,governance,Crisis management teams undergo annual tabletop simulation exercises covering severe environmental disturbances and cyberattacks.,False
+NEG-0485,governance,The Audit Committee meets privately with external auditors at the conclusion of each quarterly review without executive management present.,False
+NEG-0486,governance,The Chief Financial Officer presents quarterly cash flow forecasts and covenant compliance certificates to the Board of Directors.,False
+NEG-0487,governance,Corporate travel policies mandate the utilization of commercial rail transport for business journeys under four hours.,False
+NEG-0488,governance,Environmental compliance managers conduct unannounced audits of on-site contractor staging areas and hazardous material storage lockers.,False
+NEG-0489,governance,The Product Environmental Compliance Committee ensures that delivered steel products conform to European REACH and RoHS regulations.,False
+NEG-0490,governance,Corporate governance disclosures comply fully with the requirements of national capital market regulatory authorities.,False
+NEG-0491,governance,The Global Safety Steering Committee issues mandatory safety alerts across all operational divisions following serious industry incidents.,False
+NEG-0492,governance,Human resources compensation teams conduct regular market salary surveys to maintain competitive employee remuneration structures.,False
+NEG-0493,governance,"The Corporate Security department oversees facility physical access control, CCTV monitoring, and contracted perimeter security guards.",False
+NEG-0494,governance,Corporate accounting policies require that fixed asset componentization and depreciation schedules align strictly with IFRS rules.,False
+NEG-0495,governance,The Capital Projects Committee reviews cost-variance reports for all engineering projects with capital commitments exceeding five million euros.,False
+NEG-0496,governance,"The Board of Directors conducts strategic retreats to review long-term industrial positioning, decarbonization roadmaps, and capital allocation.",False
+NEG-0497,governance,Customer complaint escalation processes ensure that technical service metallurgists investigate quality issues within forty-eight hours.,False
+NEG-0498,governance,The Corporate Social Responsibility Committee evaluates regional grant applications submitted by local community educational charities.,False
+NEG-0499,governance,Corporate internal communication channels provide regular updates to employees regarding operational performance and safety milestones.,False
+NEG-0500,governance,The Nominating Committee utilizes specialized international executive search firms when identifying candidates for independent directorships.,False
+NEG-0501,governance,The Board Diversity Policy establishes clear targets for increasing gender and regional representation among non-executive directors.,False
+NEG-0502,governance,Corporate treasury maintains established credit facilities with an international syndicate of investment-grade banking institutions.,False
+NEG-0503,governance,The Environmental Steering Group meets monthly to review plant stack emission continuous monitoring telemetry and discharge logs.,False
+NEG-0504,governance,The Logistics Optimization Taskforce reviews intermodal shipping performance and railway freight car utilization across regional hubs.,False
+NEG-0505,governance,The Corporate Code of Conduct is translated into all primary operational languages and distributed to new employees during onboarding.,False
+NEG-0506,governance,The Supervisory Board reviews the independence of external statutory audit firms every three years to prevent conflicts of interest.,False
+NEG-0507,governance,Corporate policy mandates that all confidential whistleblower investigations are documented thoroughly and archived under restricted access.,False
+NEG-0508,governance,The Remuneration Committee consults with external legal advisors to ensure executive compensation structures conform to statutory guidelines.,False
+NEG-0509,governance,The Chief Risk Officer delivers an integrated enterprise risk dashboard to the executive committee at each monthly operational meeting.,False
+NEG-0510,governance,Corporate governance procedures require directors to recuse themselves from board deliberations involving transactions with personal conflicts.,False
+NEG-0511,boundary_definition,The reporting boundary for greenhouse gas disclosures covers all operating entities where the corporation exercises operational control.,False
+NEG-0512,boundary_definition,Entities where the company holds an equity interest without operational control are treated as non-consolidated associates.,False
+NEG-0513,boundary_definition,Joint ventures where operational authority is shared equally are consolidated on a proportional equity ownership basis.,False
+NEG-0514,boundary_definition,Facilities divested during the fiscal year are included in environmental metrics up to the legal date of title transfer.,False
+NEG-0515,boundary_definition,Newly acquired manufacturing facilities are incorporated into sustainability disclosures within twelve months of transaction close.,False
+NEG-0516,boundary_definition,"Commercial offices, sales agencies, and minor administrative suites with fewer than fifty staff members are excluded from direct energy reporting.",False
+NEG-0517,boundary_definition,"Non-operational properties, brownfield redevelopment sites, and closed legacy landfills are excluded from standard operational footprint metrics.",False
+NEG-0518,boundary_definition,Leased warehouses where the company is responsible for operational utility bills are consolidated within Scope 1 and Scope 2 accounting.,False
+NEG-0519,boundary_definition,Corporate aviation assets and commercial delivery fleets operated under capital leases are treated as Scope 1 emission sources.,False
+NEG-0520,boundary_definition,Third-party dedicated contractors operating permanently within plant boundaries are included within on-site workplace safety statistics.,False
+NEG-0521,boundary_definition,Short-term construction contractors engaged in capital expansion projects are tracked under separate construction safety reporting rubrics.,False
+NEG-0522,boundary_definition,The organizational boundary for non-financial reporting corresponds to the consolidation scope utilized for statutory financial statements.,False
+NEG-0523,boundary_definition,Scope 1 emissions encompass all direct greenhouse gas emissions from sources owned or controlled by the legal corporate entity.,False
+NEG-0524,boundary_definition,"Scope 2 emissions account for indirect greenhouse gas emissions from the generation of purchased electricity, steam, heating, and cooling.",False
+NEG-0525,boundary_definition,Scope 3 emissions represent all other indirect emissions occurring across the upstream and downstream corporate value chain.,False
+NEG-0526,boundary_definition,"Upstream emissions originate from the extraction, production, and transportation of purchased raw materials, goods, and capital assets.",False
+NEG-0527,boundary_definition,"Downstream emissions encompass the transport, processing, operational use, and eventual end-of-life disposal of delivered finished goods.",False
+NEG-0528,boundary_definition,Operational control is defined as possessing full legal authority to introduce and implement operating policies at the facility.,False
+NEG-0529,boundary_definition,Financial control is defined as the ability to direct operational and financial policies with a view to gaining economic benefits.,False
+NEG-0530,boundary_definition,Equity share accounting allocates greenhouse gas emissions and environmental impacts according to the percentage of corporate ownership.,False
+NEG-0531,boundary_definition,The reporting period covers the twelve-month calendar year commencing January first and concluding December thirty-first.,False
+NEG-0532,boundary_definition,Financial values throughout this publication are presented in euros or US dollars as specified in individual section headings.,False
+NEG-0533,boundary_definition,Metric units of measurement are utilized throughout this document in accordance with the International System of Units (SI).,False
+NEG-0534,boundary_definition,Tonnage metrics represent metric tons equivalent to one thousand kilograms unless explicitly designated as imperial short tons.,False
+NEG-0535,boundary_definition,Biogenic emissions refer to carbon dioxide emissions originating from biological or organic feedstocks rather than fossil deposits.,False
+NEG-0536,boundary_definition,Carbon dioxide equivalent (CO2e) is the universal metric measure used to compare emissions from various greenhouse gases based on GWP.,False
+NEG-0537,boundary_definition,Global warming potential represents the relative warming effect of a greenhouse gas compared to carbon dioxide over a 100-year timescale.,False
+NEG-0538,boundary_definition,"Double materiality encompasses both impact materiality on society and environment, and financial materiality on corporate enterprise value.",False
+NEG-0539,boundary_definition,Impact materiality considers significant positive or negative impacts that corporate activities exert on people and the natural environment.,False
+NEG-0540,boundary_definition,Financial materiality considers sustainability matters that trigger significant financial risks or opportunities affecting cash flows.,False
+NEG-0541,boundary_definition,Direct reduced iron (DRI) refers to metallic iron produced by the direct solid-state reduction of iron ore without melting.,False
+NEG-0542,boundary_definition,Electric arc furnace (EAF) refers to a metallurgical furnace that melts scrap steel and DRI utilizing high-power electric arcs.,False
+NEG-0543,boundary_definition,"Blast furnace-basic oxygen furnace (BF-BOF) refers to integrated steelmaking utilizing iron ore, coking coal, and oxygen conversion.",False
+NEG-0544,boundary_definition,ResponsibleSteel is an international multi-stakeholder standard and certification initiative for responsible steel manufacturing.,False
+NEG-0545,boundary_definition,European Sustainability Reporting Standards (ESRS) are mandatory reporting frameworks established under the EU CSRD directive.,False
+NEG-0546,boundary_definition,Global Reporting Initiative (GRI) Standards represent a widely adopted voluntary framework for multi-stakeholder sustainability reporting.,False
+NEG-0547,boundary_definition,Sustainability Accounting Standards Board (SASB) standards provide industry-specific disclosure metrics focused on financial materiality.,False
+NEG-0548,boundary_definition,"The Task Force on Climate-related Financial Disclosures (TCFD) framework structures reporting around governance, strategy, risk, and metrics.",False
+NEG-0549,boundary_definition,The Science Based Targets initiative (SBTi) validates whether corporate greenhouse gas reduction goals align with climate science.,False
+NEG-0550,boundary_definition,Carbon border adjustment mechanisms (CBAM) are regulatory tariffs designed to equalize carbon pricing between domestic and imported goods.,False
+NEG-0551,boundary_definition,The EU Taxonomy is a standardized classification system establishing a list of environmentally sustainable economic activities.,False
+NEG-0552,boundary_definition,Taxonomy alignment requires demonstrating substantial contribution to environmental objectives while doing no significant harm to others.,False
+NEG-0553,boundary_definition,Minimum safeguards under the EU Taxonomy mandate compliance with OECD Guidelines and UN Guiding Principles on Business and Human Rights.,False
+NEG-0554,boundary_definition,A Power Purchase Agreement (PPA) is a long-term commercial electricity supply contract directly between a generator and corporate consumer.,False
+NEG-0555,boundary_definition,Guarantee of Origin (GO) is an electronic tracking certificate verifying that a specific quantity of electricity was generated from renewable sources.,False
+NEG-0556,boundary_definition,"Water withdrawal represents the total volume of water removed from municipal, surface, or underground hydrological sources.",False
+NEG-0557,boundary_definition,"Water consumption represents water evaporated, incorporated into manufactured products, or transferred beyond the local catchment basin.",False
+NEG-0558,boundary_definition,Water discharge represents the total volume of treated effluent returned to municipal sewage systems or surface watercourses.,False
+NEG-0559,boundary_definition,Lost time injury is defined as an occupational injury resulting in a worker being unable to perform their normal duties on subsequent shifts.,False
+NEG-0560,boundary_definition,"Total recordable incidents aggregate lost time injuries, restricted work cases, and medical treatment cases beyond first aid.",False
+NEG-0561,boundary_definition,Near-miss incident refers to an unplanned operational event that did not result in injury or damage but had potential to do so.,False
+NEG-0562,boundary_definition,"Hazardous waste designates waste streams possessing toxic, flammable, corrosive, or reactive chemical characteristics.",False
+NEG-0563,boundary_definition,"Non-hazardous waste designates inert metallurgical slag, packaging materials, and municipal refuse not posing acute ecological hazards.",False
+NEG-0564,boundary_definition,Beneficial reuse designates industrial co-products directed to secondary commercial applications without entering municipal disposal facilities.,False
+NEG-0565,boundary_definition,Circularity rate represents the proportion of secondary materials utilized relative to total raw material inputs consumed.,False
+NEG-0566,boundary_definition,Product carbon footprint expresses the cradle-to-gate life cycle greenhouse gas emissions per functional unit of delivered product.,False
+NEG-0567,boundary_definition,"Cradle-to-gate boundaries encompass raw material extraction, upstream transportation, and manufacturing up to the plant exit gate.",False
+NEG-0568,boundary_definition,"Cradle-to-grave boundaries extend cradle-to-gate accounting to incorporate product distribution, retail use, and end-of-life disposal.",False
+NEG-0569,boundary_definition,Internal carbon pricing refers to an internally assigned monetary value per ton of greenhouse gas applied in capital budgeting decisions.,False
+NEG-0570,boundary_definition,Shadow carbon price is a theoretical capital appraisal metric applied in project discounted cash flow models without actual cash transfer.,False
+NEG-0571,boundary_definition,Carbon levy is an actual internal monetary fee assessed on operational business units based upon their direct greenhouse gas emissions.,False
+NEG-0572,boundary_definition,Scope 1 emissions from leased company vehicles are calculated based on recorded fuel purchases and fleet mileage logs.,False
+NEG-0573,boundary_definition,Non-operating holding companies without physical assets or employees are excluded from environmental metric consolidations.,False
+NEG-0574,boundary_definition,"Contracted security guards, catering staff, and cleaning personnel are categorized as non-operational contractor personnel.",False
+NEG-0575,boundary_definition,The baseline recalculation threshold defines the percentage change in structural emissions requiring formal restatement of historical data.,False
+NEG-0576,boundary_definition,Significant indirect emissions categories under ISO 14064-1 correspond conceptually to Scope 3 categories under the GHG Protocol.,False
+NEG-0577,boundary_definition,The principle of completeness requires reporting entities to disclose all relevant greenhouse gas emissions within the declared boundary.,False
+NEG-0578,boundary_definition,The principle of consistency requires the application of uniform measurement methodologies to allow meaningful multi-year trend analysis.,False
+NEG-0579,boundary_definition,The principle of accuracy requires that greenhouse gas quantification is systematically neither over nor under actual emissions.,False
+NEG-0580,boundary_definition,"The principle of transparency mandates the disclosure of all significant assumptions, calculation models, and baseline data sources.",False
+NEG-0581,boundary_definition,The operational reporting perimeter is determined annually through consultation between the corporate legal and sustainability offices.,False
+NEG-0582,boundary_definition,Minor joint ventures where corporate shareholding is less than twenty percent are classified as financial investments outside boundary.,False
+NEG-0583,boundary_definition,Temporary project offices established during furnace relining or capital installation are treated as incidental to the host facility.,False
+NEG-0584,boundary_definition,Warehouse facilities operated by third-party freight forwarders on a common-carrier basis are accounted for under Scope 3 logistics.,False
+NEG-0585,boundary_definition,"The reporting boundary for social metrics encompasses one hundred percent of permanent, temporary, and apprentice personnel.",False
+NEG-0586,boundary_definition,Executive committee members are categorized under corporate headquarters for geographic headcount allocation reporting.,False
+NEG-0587,boundary_definition,Workplace fatalities are recorded separately from general incident rates and subjected to independent technical root-cause investigation.,False
+NEG-0588,boundary_definition,Occupational health exposure limits for airborne respirable crystalline silica follow regional industrial hygiene standards.,False
+NEG-0589,boundary_definition,Ergonomic risk classifications conform to standardized European assessment of manual handling operations protocols.,False
+NEG-0590,boundary_definition,The reporting boundary for corporate governance policies extends across all majority-owned operational legal subsidiaries worldwide.,False
+NEG-0591,boundary_definition,Environmental management system certifications are maintained individually by facility operating licenses and corporate entities.,False
+NEG-0592,boundary_definition,Specific water consumption intensity is calculated as cubic meters of water consumed per metric ton of cast steel slab.,False
+NEG-0593,boundary_definition,Specific electrical consumption intensity is calculated as kilowatt-hours consumed per metric ton of finished rolled bar.,False
+NEG-0594,boundary_definition,The terminology hot metal designates molten blast furnace iron prior to secondary refining and basic oxygen conversion.,False
+NEG-0595,boundary_definition,"The terminology crude steel designates unworked steel in the form of continuously cast billets, blooms, slabs, or ingots.",False
+NEG-0596,boundary_definition,"The terminology secondary metallurgy designates refining processes carried out in ladle furnaces, vacuum degassers, or stirring stations.",False
+NEG-0597,boundary_definition,The terminology continuous casting designates the industrial process whereby molten steel is solidified into semi-finished billets or slabs.,False
+NEG-0598,boundary_definition,The terminology direct reduction designates the solid-state reduction of iron ore pellets utilizing carbon monoxide and hydrogen gas.,False
+NEG-0599,boundary_definition,The corporate fiscal year corresponds exactly to the statutory annual accounting period ending on the thirty-first of December.,False
+NEG-0600,boundary_definition,All disclosures in this publication have been prepared solely to inform public stakeholders concerning non-financial corporate performance.,False
