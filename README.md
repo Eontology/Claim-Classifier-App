@@ -1,0 +1,1 @@
+This project trains a TF-IDF classifier with regex features to score whether sentences from sustainability reports contain claims. It assigns each sentence an auto-accept, review, or discard decision, but the current results require human validation because testing found both false positives and missed claims.
