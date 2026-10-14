@@ -1,23 +1,24 @@
-"""Validation-first claim classification for sentence-level ESG report text.
+"""Two-stage claim classification for sentence-level ESG report text.
 
 The model combines TF-IDF text features with deterministic document signals.
 PDF ingestion is deliberately separate: this module expects one already-split
 sentence per record, optionally carrying ``is_bold`` and ``is_bullet`` flags.
+Only auto-accepted claims are routed through the keyword-based type functions.
 """
 
-from __future__ import annotations
 
 import argparse
 import csv
 import json
 import re
+import unicodedata
 from collections import Counter
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any, Iterable
 
 
-DEFAULT_AUTO_ACCEPT_THRESHOLD = 0.85
+DEFAULT_AUTO_ACCEPT_THRESHOLD = 0.65
 DEFAULT_REVIEW_THRESHOLD = 0.50
 MIN_UNIQUE_NEGATIVES = 500
 MAX_DUPLICATE_FRACTION = 0.05
@@ -31,6 +32,151 @@ BULLET_RE = re.compile(r"^\s*(?:[-*•‣]|\d+[.)])\s+")
 TARGET_RE = re.compile(r"\b(?:target|goal|aim|commit|will|reduce|increase|achieve)\w*\b", re.IGNORECASE)
 
 
+# Canonical names and aliases supplied for the standards/certification search.
+# These terms all route to the project's current "certification" claim type.
+# The route is not proof that a certificate was awarded or a statement is true.
+CERTIFICATION_KEYWORDS: dict[str, tuple[str, ...]] = {
+    # ISO standards
+    "ISO 14001": ("ISO 14001", "ISO-14001"),
+    "ISO 9001": ("ISO 9001", "ISO-9001"),
+    "ISO 45001": ("ISO 45001", "ISO-45001"),
+    "ISO 50001": ("ISO 50001", "ISO-50001"),
+    "ISO 14064": ("ISO 14064", "ISO-14064"),
+    "ISO/IEC 27001": ("ISO/IEC 27001", "ISO 27001", "ISO-27001"),
+    "ISO 37001": ("ISO 37001", "ISO-37001"),
+    "ISO 37301": ("ISO 37301", "ISO-37301"),
+    "ISO 20400": ("ISO 20400", "ISO-20400"),
+    "ISO 26000": ("ISO 26000", "ISO-26000"),
+    "ISO 14046": ("ISO 14046", "ISO-14046"),
+    # Ratings, disclosures, and company programmes
+    "EcoVadis": ("EcoVadis",),
+    "CDP": ("CDP", "Carbon Disclosure Project"),
+    "B Corp": ("B Corp", "B Corporation"),
+    "Sustainalytics ESG Risk Rating": ("Sustainalytics ESG Risk Rating", "Sustainalytics"),
+    "Sedex": ("Sedex",),
+    "SMETA": ("SMETA", "Sedex Members Ethical Trade Audit"),
+    "MSCI ESG Ratings": ("MSCI ESG Ratings", "MSCI ESG"),
+    "DJSI": ("DJSI", "Dow Jones Sustainability Index"),
+    # Buildings and real estate. Bare 'well' is intentionally excluded.
+    "LEED": ("LEED",),
+    "BREEAM": ("BREEAM",),
+    "IGBC": ("IGBC", "Indian Green Building Council"),
+    "WELL Building Standard": ("WELL Building Standard", "WELL certification", "WELL certified"),
+    "GRESB": ("GRESB",),
+    "EDGE": ("EDGE", "EDGE Green Building", "EDGE Certification"),
+    "Passivhaus": ("Passivhaus", "Passive House"),
+    # Automotive and industry
+    "TISAX": ("TISAX",),
+    "IATF 16949": ("IATF 16949",),
+    "AS9100": ("AS9100", "AS 9100"),
+    # Product, forestry, and supply-chain schemes
+    "FSC": ("FSC", "Forest Stewardship Council"),
+    "PEFC": ("PEFC",),
+    "Cradle to Cradle Certified": ("Cradle to Cradle Certified", "Cradle to Cradle", "C2C"),
+    "Fairtrade": ("Fairtrade", "Fair Trade"),
+    "Rainforest Alliance": ("Rainforest Alliance",),
+    "RSPO": ("RSPO", "Roundtable on Sustainable Palm Oil"),
+    "GOTS": ("GOTS", "Global Organic Textile Standard"),
+    "OEKO-TEX": ("OEKO-TEX", "OEKO TEX"),
+    "ISCC": ("ISCC", "International Sustainability & Carbon Certification"),
+    # Climate, reporting, and regulatory references
+    "SBTi": ("SBTi", "Science Based Targets initiative", "Science Based Targets"),
+    "Gold Standard": ("Gold Standard",),
+    "Verra/VCS": ("Verra", "VCS", "Verified Carbon Standard"),
+    "GRI": ("GRI", "Global Reporting Initiative"),
+    "SASB": ("SASB", "Sustainability Accounting Standards Board"),
+    "TCFD": ("TCFD", "Task Force on Climate-related Financial Disclosures"),
+    "ISSB": ("ISSB", "International Sustainability Standards Board"),
+    "IFRS S1": ("IFRS S1",),
+    "IFRS S2": ("IFRS S2",),
+    "GHG Protocol": ("GHG Protocol",),
+    "TNFD": ("TNFD", "Taskforce on Nature-related Financial Disclosures"),
+    "CSRD": ("CSRD", "Corporate Sustainability Reporting Directive"),
+    "ESRS": ("ESRS", "European Sustainability Reporting Standards"),
+    "RE100": ("RE100",),
+    "EP100": ("EP100",),
+    "EV100": ("EV100",),
+}
+
+
+def _reference_text(text: str) -> str:
+    text = unicodedata.normalize("NFKC", text)
+    text = re.sub(r"[\u2010-\u2015\u2212]", "-", text)
+    return " ".join(text.casefold().split())
+
+
+def _reference_pattern(alias: str) -> re.Pattern[str]:
+    escaped = re.escape(_reference_text(alias)).replace(r"\ ", r"\s+")
+    return re.compile(rf"(?<![a-z0-9]){escaped}(?![a-z0-9])")
+
+
+REFERENCE_PATTERNS = {
+    name: tuple(_reference_pattern(alias) for alias in aliases)
+    for name, aliases in CERTIFICATION_KEYWORDS.items()
+}
+
+
+def matched_certification_keywords(sentence: str) -> list[str]:
+    """Find supplied reference terms, independently of the ML claim score."""
+
+    text = _reference_text(sentence)
+    if not text:
+        return []
+    matches = []
+    for name, patterns in REFERENCE_PATTERNS.items():
+        # EDGE is also an ordinary English word; require uppercase for a bare
+        # mention unless a longer EDGE phrase identifies the programme.
+        if name == "EDGE" and re.search(r"\bEDGE\b", sentence) is None:
+            if not any(pattern.search(text) for pattern in patterns[1:]):
+                continue
+        elif not any(pattern.search(text) for pattern in patterns):
+            continue
+        matches.append(name)
+    return matches
+
+
+# The four type routes run only after the general classifier auto-accepts a
+# sentence. The final three dictionaries are deliberately empty until their
+# claim types and keywords have been agreed.
+STANDARD_KEYWORDS: tuple[str, ...] = ()
+SUSTAINABILITY_KEYWORDS: tuple[str, ...] = ()
+FUTURE_TYPE_KEYWORDS: tuple[str, ...] = ()
+
+
+def _match_simple_keywords(sentence: str, keywords: tuple[str, ...]) -> list[str]:
+    text = _reference_text(sentence)
+    return [keyword for keyword in keywords if _reference_pattern(keyword).search(text)]
+
+
+def certification_claim_keywords(sentence: str) -> list[str]:
+    return matched_certification_keywords(sentence)
+
+
+def standard_claim_keywords(sentence: str) -> list[str]:
+    return _match_simple_keywords(sentence, STANDARD_KEYWORDS)
+
+
+def sustainability_claim_keywords(sentence: str) -> list[str]:
+    return _match_simple_keywords(sentence, SUSTAINABILITY_KEYWORDS)
+
+
+def future_type_claim_keywords(sentence: str) -> list[str]:
+    return _match_simple_keywords(sentence, FUTURE_TYPE_KEYWORDS)
+
+
+def classify_claim_type(sentence: str) -> tuple[str, list[str]]:
+    """Return the first matching type; call only for auto-accepted claims."""
+
+    for claim_type, matcher in (
+        ("certification", certification_claim_keywords),
+        ("standard", standard_claim_keywords),
+        ("sustainability", sustainability_claim_keywords),
+        ("future_type", future_type_claim_keywords),
+    ):
+        keywords = matcher(sentence)
+        if keywords:
+            return claim_type, keywords
+    return "", []
 @dataclass(frozen=True)
 class NegativeDatasetCheck:
     rows: int
@@ -215,7 +361,7 @@ def classify_csv(
     output_csv: Path,
     *,
     sentence_column: str = "sentence_text",
-) -> dict[str, int]:
+) -> dict[str, Any]:
     """Classify each non-blank input sentence and retain its source metadata."""
 
     try:
@@ -234,7 +380,7 @@ def classify_csv(
             f"Available columns: {', '.join(input_fields)}"
         )
 
-    result_fields = ["claim_probability", "decision", "is_claim"]
+    result_fields = ["claim_probability", "decision", "is_claim", "claim_type", "claim_type_keywords"]
     conflicts = set(input_fields).intersection(result_fields)
     if conflicts:
         raise ValueError(
@@ -245,14 +391,16 @@ def classify_csv(
         raise FileNotFoundError(f"Saved model not found: {model_path}")
 
     model = load(model_path)
-    required_model_parts = {"classifier", "text_vectorizer", "signal_vectorizer", "thresholds"}
+    required_model_parts = {"classifier", "text_vectorizer", "signal_vectorizer"}
     missing_model_parts = required_model_parts.difference(model)
     if missing_model_parts:
         raise ValueError("Saved model is incomplete: " + ", ".join(sorted(missing_model_parts)))
 
-    thresholds = model["thresholds"]
-    auto_accept_threshold = float(thresholds["auto_accept"])
-    review_threshold_value = float(thresholds["review"])
+    # The saved joblib may still contain the previous 0.85 gate. Thresholds
+    # control routing at inference time; changing them does not retrain the ML
+    # weights, so the current configured gate deliberately takes precedence.
+    auto_accept_threshold = DEFAULT_AUTO_ACCEPT_THRESHOLD
+    review_threshold_value = DEFAULT_REVIEW_THRESHOLD
     nonblank_indices = [
         index for index, row in enumerate(records) if row.get(sentence_column, "").strip()
     ]
@@ -268,7 +416,10 @@ def classify_csv(
         probabilities = []
 
     for row in records:
-        row.update({"claim_probability": "", "decision": "missing_sentence", "is_claim": ""})
+        row.update({
+            "claim_probability": "", "decision": "missing_sentence", "is_claim": "",
+            "claim_type": "", "claim_type_keywords": "",
+        })
     decisions = Counter()
     for index, probability in zip(nonblank_indices, probabilities):
         probability_value = float(probability)
@@ -277,10 +428,16 @@ def classify_csv(
             auto_accept_threshold=auto_accept_threshold,
             review_threshold=review_threshold_value,
         )
+        claim_type, type_keywords = (
+            classify_claim_type(records[index][sentence_column])
+            if decision == "auto_accept" else ("", [])
+        )
         records[index].update({
             "claim_probability": f"{probability_value:.6f}",
             "decision": decision,
             "is_claim": "True" if decision == "auto_accept" else "False" if decision == "discard" else "",
+            "claim_type": claim_type,
+            "claim_type_keywords": "; ".join(type_keywords),
         })
         decisions[decision] += 1
 
@@ -296,6 +453,8 @@ def classify_csv(
         "auto_accept": decisions["auto_accept"],
         "review": decisions["review"],
         "discard": decisions["discard"],
+        "auto_accept_threshold": auto_accept_threshold,
+        "review_threshold": review_threshold_value,
     }
 
 
