@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claim Classifier</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --panel: #ffffff; --text: #1b1f24; --muted: #646d78; --border: #e1e4e8;
+    --accent: #2f6fde; --accept: #1a7f4b; --accept-bg: #e3f4ea; --review: #a35d00; --review-bg: #fdf0dc;
+    --discard: #6b7280; --discard-bg: #eef0f2; --error: #b42318; --error-bg: #fde8e7; --row-hover: #f2f6fd;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111418; --panel: #1a1e24; --text: #e6e9ed; --muted: #9aa3ad; --border: #2c323a;
+      --accent: #6c9ef8; --accept: #5fd394; --accept-bg: #16301f; --review: #f0b357; --review-bg: #33270f;
+      --discard: #9aa3ad; --discard-bg: #24292f; --error: #ff8a80; --error-bg: #3a1a18; --row-hover: #1f2631;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  header { padding: 14px 24px; border-bottom: 1px solid var(--border); background: var(--panel); display: flex; align-items: center; gap: 16px; }
+  header h1 { font-size: 17px; margin: 0; }
+  header .file { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  header button { margin-left: auto; }
+  main { padding: 20px 24px; }
+  button, .btn { font: inherit; border: 1px solid var(--border); background: var(--panel); color: var(--text); border-radius: 6px; padding: 6px 12px; cursor: pointer; text-decoration: none; display: inline-block; }
+  button:hover, .btn:hover { border-color: var(--accent); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .hidden { display: none !important; }
+
+  #drop { max-width: 560px; margin: 60px auto; background: var(--panel); border: 2px dashed var(--border); border-radius: 12px; padding: 48px 32px; text-align: center; cursor: pointer; }
+  #drop.over { border-color: var(--accent); background: var(--row-hover); }
+  #drop h2 { margin: 0 0 6px; font-size: 18px; }
+  #drop p { margin: 0 0 18px; color: var(--muted); }
+  .note { max-width: 560px; margin: -40px auto 0; color: var(--muted); font-size: 13px; text-align: center; }
+
+  #progress { max-width: 560px; margin: 60px auto; background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 28px 32px; }
+  #progress h2 { margin: 0 0 4px; font-size: 16px; }
+  .steps { list-style: none; padding: 0; margin: 18px 0 0; }
+  .steps li { padding: 6px 0; color: var(--muted); display: flex; gap: 10px; align-items: center; }
+  .steps li::before { content: ""; width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--border); flex: none; }
+  .steps li.active { color: var(--text); font-weight: 600; }
+  .steps li.active::before { border-color: var(--accent); border-top-color: transparent; animation: spin .8s linear infinite; }
+  .steps li.complete::before { background: var(--accept); border-color: var(--accept); }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .err { background: var(--error-bg); color: var(--error); padding: 10px 12px; border-radius: 6px; margin-top: 14px; white-space: pre-wrap; }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-bottom: 16px; }
+  .stat { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; }
+  .stat .n { font-size: 22px; font-weight: 650; font-variant-numeric: tabular-nums; }
+  .stat .l { color: var(--muted); font-size: 12px; }
+  .stat.accept .n { color: var(--accept); } .stat.review .n { color: var(--review); }
+
+  .layout { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+  .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; }
+  .toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 10px; border-bottom: 1px solid var(--border); }
+  .tabs { display: flex; flex-wrap: wrap; gap: 4px; }
+  .tabs button { border-radius: 999px; padding: 4px 12px; font-size: 13px; }
+  .tabs button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .toolbar input { flex: 1; min-width: 160px; font: inherit; padding: 6px 10px; border: 1px solid var(--border); border-radius: 6px; background: var(--bg); color: var(--text); }
+  .downloads { display: flex; gap: 6px; margin-left: auto; }
+  .tablewrap { max-height: calc(100vh - 260px); overflow: auto; }
+  table { width: 100%; border-collapse: collapse; }
+  th { position: sticky; top: 0; background: var(--panel); text-align: left; font-size: 12px; color: var(--muted); font-weight: 600; padding: 8px 10px; border-bottom: 1px solid var(--border); cursor: pointer; user-select: none; white-space: nowrap; }
+  td { padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tbody tr { cursor: pointer; }
+  tbody tr:hover { background: var(--row-hover); }
+  tbody tr.sel { background: var(--row-hover); box-shadow: inset 3px 0 var(--accent); }
+  td.page { color: var(--muted); font-variant-numeric: tabular-nums; width: 48px; }
+  td.prob { width: 110px; font-variant-numeric: tabular-nums; }
+  .bar { height: 4px; background: var(--border); border-radius: 2px; margin-top: 4px; overflow: hidden; }
+  .bar > span { display: block; height: 100%; background: var(--accent); }
+  .chip { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; white-space: nowrap; }
+  .chip.auto_accept { background: var(--accept-bg); color: var(--accept); }
+  .chip.review { background: var(--review-bg); color: var(--review); }
+  .chip.discard, .chip.extraction { background: var(--discard-bg); color: var(--discard); }
+  .kw { color: var(--muted); font-size: 12px; }
+  .empty { padding: 30px; text-align: center; color: var(--muted); }
+
+  .viewer { position: sticky; top: 16px; height: calc(100vh - 200px); display: flex; flex-direction: column; overflow: hidden; }
+  .viewer .vh { padding: 8px 12px; border-bottom: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; align-items: center; gap: 8px; }
+  .viewer .vh a { margin-left: auto; color: var(--accent); }
+  .viewer .vh button { padding: 2px 8px; }
+  .pagewrap { flex: 1; overflow: auto; background: var(--bg); padding: 12px; }
+  .pagewrap img { display: block; max-width: 100%; margin: 0 auto; box-shadow: 0 1px 4px rgba(0,0,0,.25); background: #fff; cursor: zoom-in; }
+  .pagewrap img.zoom { max-width: none; width: 220%; cursor: zoom-out; }
+  .caveat { color: var(--muted); font-size: 12px; margin-top: 12px; }
+
+  @media (max-width: 900px) {
+    main { padding: 16px; }
+    .layout { grid-template-columns: 1fr; }
+    .viewer { position: static; height: 70vh; }
+    .tablewrap { max-height: none; }
+    .downloads { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Claim Classifier</h1>
+  <span class="file" id="fileLabel"></span>
+  <button id="newBtn" class="hidden">Upload another PDF</button>
+</header>
+<main>
+  <section id="uploadView">
+    <label id="drop">
+      <h2>Upload a sustainability report</h2>
+      <p>Drop a PDF here or click to choose one (up to {{ max_upload_mb }} MB).</p>
+      <span class="btn primary">Choose PDF</span>
+      <input type="file" id="fileInput" accept="application/pdf,.pdf" hidden>
+    </label>
+    <p class="note">The PDF is split into sentences, then each sentence is scored for whether it contains a claim.</p>
+    <div id="uploadError" class="err hidden" style="max-width:560px;margin:16px auto"></div>
+  </section>
+
+  <section id="progressView" class="hidden">
+    <div id="progress">
+      <h2 id="progressTitle">Processing…</h2>
+      <div class="kw" id="elapsed"></div>
+      <ul class="steps">
+        <li data-stage="uploading">Uploading PDF</li>
+        <li data-stage="loading_model">Loading sentence model (first run only)</li>
+        <li data-stage="extracting">Extracting sentences</li>
+        <li data-stage="classifying">Classifying claims</li>
+      </ul>
+      <div id="jobError" class="err hidden"></div>
+    </div>
+  </section>
+
+  <section id="resultsView" class="hidden">
+    <div class="stats" id="stats"></div>
+    <div class="layout">
+      <div class="panel">
+        <div class="toolbar">
+          <div class="tabs" id="tabs"></div>
+          <input type="search" id="search" placeholder="Search sentences or keywords">
+          <div class="downloads" id="downloads"></div>
+        </div>
+        <div class="tablewrap">
+          <table>
+            <thead><tr>
+              <th data-sort="page_number">Page</th>
+              <th data-sort="sentence_text">Sentence</th>
+              <th data-sort="claim_probability">Probability ▾</th>
+              <th data-sort="decision">Decision</th>
+            </tr></thead>
+            <tbody id="rows"></tbody>
+          </table>
+          <div class="empty hidden" id="empty">No sentences match.</div>
+        </div>
+      </div>
+      <div class="panel viewer">
+        <div class="vh">
+          <button id="prevPage" title="Previous page">‹</button>
+          <span id="viewerLabel"></span>
+          <button id="nextPage" title="Next page">›</button>
+          <a id="pdfLink" target="_blank" rel="noopener">Open full PDF</a>
+        </div>
+        <div class="pagewrap"><img id="pageImg" alt="PDF page"></div>
+      </div>
+    </div>
+    <p class="caveat">Scores are model estimates. Testing has found both false positives and missed claims, so review results before treating auto-accepted sentences as verified claims.</p>
+  </section>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const STAGES = ["uploading", "loading_model", "extracting", "classifying"];
+const DECISION_LABEL = { auto_accept: "Auto-accept", review: "Review", discard: "Discard", extraction: "Not classified" };
+const TABS = [
+  ["auto_accept", "Auto-accept"], ["review", "Review"], ["discard", "Discard"],
+  ["all", "All classified"], ["extraction", "Not classified"],
+];
+let job = null, result = null, tab = "auto_accept", sort = { key: "claim_probability", dir: -1 }, selected = null;
+
+function show(view) {
+  for (const id of ["uploadView", "progressView", "resultsView"]) $(id).classList.toggle("hidden", id !== view);
+  $("newBtn").classList.toggle("hidden", view === "uploadView");
+}
+
+function setStage(stage) {
+  const at = STAGES.indexOf(stage);
+  document.querySelectorAll(".steps li").forEach((li) => {
+    const i = STAGES.indexOf(li.dataset.stage);
+    li.className = stage === "done" || i < at ? "complete" : i === at ? "active" : "";
+  });
+}
+
+function showError(where, message) { $(where).textContent = message; $(where).classList.remove("hidden"); }
+
+async function upload(file) {
+  $("uploadError").classList.add("hidden");
+  if (!file) return;
+  if (!/\.pdf$/i.test(file.name)) return showError("uploadError", "Only PDF files are supported.");
+  $("fileLabel").textContent = file.name;
+  $("jobError").classList.add("hidden");
+  $("progressTitle").textContent = "Processing…";
+  show("progressView");
+  setStage("uploading");
+  const body = new FormData();
+  body.append("pdf", file);
+  try {
+    const res = await fetch("/api/jobs", { method: "POST", body });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || res.statusText);
+    poll(data.id);
+  } catch (e) {
+    show("uploadView");
+    showError("uploadError", e.message);
+  }
+}
+
+async function poll(id) {
+  const res = await fetch(`/api/jobs/${id}`);
+  job = await res.json();
+  $("elapsed").textContent = `${job.elapsed.toFixed(0)} s elapsed`;
+  if (job.stage === "error") {
+    $("progressTitle").textContent = "Processing failed";
+    document.querySelectorAll(".steps li.active").forEach((li) => (li.className = ""));
+    return showError("jobError", job.error);
+  }
+  if (job.stage === "done") return showResults(job);
+  setStage(job.stage === "queued" ? "loading_model" : job.stage);
+  setTimeout(() => poll(id), 1000);
+}
+
+function showResults(j) {
+  result = j.result;
+  result.review_rows.forEach((r) => (r.decision = "extraction"));
+  const s = result.summary;
+  $("stats").innerHTML = [
+    ["Pages", result.pages], ["Sentences extracted", result.extracted], ["Classified", result.classified],
+    ["Auto-accept", s.auto_accept, "accept"], ["Review", s.review, "review"], ["Discard", s.discard],
+    ["Not classified", result.extraction_review],
+  ].map(([l, n, c]) => `<div class="stat ${c || ""}"><div class="n">${n}</div><div class="l">${l}</div></div>`).join("");
+  $("downloads").innerHTML =
+    (result.classified ? `<a class="btn" href="/api/jobs/${j.id}/download/classified">Classified CSV</a>` : "") +
+    `<a class="btn" href="/api/jobs/${j.id}/download/review">Not-classified CSV</a>`;
+  $("pdfLink").href = `/api/jobs/${j.id}/pdf`;
+  tab = s.auto_accept ? "auto_accept" : "all";
+  selected = null;
+  show("resultsView");
+  render();
+  openPage(1);
+}
+
+function counts() {
+  const c = { all: result.sentences.length, extraction: result.review_rows.length };
+  for (const r of result.sentences) c[r.decision] = (c[r.decision] || 0) + 1;
+  return c;
+}
+
+function esc(t) { return String(t ?? "").replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]); }
+
+function render() {
+  const c = counts();
+  $("tabs").innerHTML = TABS.map(([k, l]) => `<button data-tab="${k}" class="${k === tab ? "on" : ""}">${l} (${c[k] || 0})</button>`).join("");
+  const q = $("search").value.trim().toLowerCase();
+  let rows = tab === "extraction" ? result.review_rows : tab === "all" ? result.sentences : result.sentences.filter((r) => r.decision === tab);
+  if (q) rows = rows.filter((r) => `${r.sentence_text} ${r.claim_type_keywords || ""}`.toLowerCase().includes(q));
+  rows = [...rows].sort((a, b) => {
+    const x = a[sort.key] ?? "", y = b[sort.key] ?? "";
+    const cmp = typeof x === "number" || sort.key === "claim_probability" ? (Number(x) || 0) - (Number(y) || 0) : String(x).localeCompare(String(y));
+    return cmp * sort.dir || a.page_number - b.page_number;
+  });
+  document.querySelectorAll("th[data-sort]").forEach((th) => {
+    th.textContent = th.textContent.replace(/ [▾▴]$/, "") + (th.dataset.sort === sort.key ? (sort.dir < 0 ? " ▾" : " ▴") : "");
+  });
+  $("rows").innerHTML = rows.map((r, i) => {
+    const p = r.claim_probability === "" || r.claim_probability == null ? null : Number(r.claim_probability);
+    const type = r.claim_type ? `<div class="kw">${esc(r.claim_type)}: ${esc(r.claim_type_keywords)}</div>` : "";
+    const extra = r.decision === "extraction" ? `<div class="kw">${esc(r.content_type)}</div>` : "";
+    return `<tr data-i="${i}" data-page="${r.page_number}" class="${selected === r ? "sel" : ""}">
+      <td class="page">${r.page_number}</td>
+      <td>${esc(r.sentence_text)}${type}${extra}</td>
+      <td class="prob">${p == null ? "—" : `${(p * 100).toFixed(1)}%<div class="bar"><span style="width:${p * 100}%"></span></div>`}</td>
+      <td><span class="chip ${r.decision}">${DECISION_LABEL[r.decision] || r.decision}</span></td></tr>`;
+  }).join("");
+  $("rows")._data = rows;
+  $("empty").classList.toggle("hidden", rows.length > 0);
+}
+
+let currentPage = 1;
+function openPage(page, sentence = "") {
+  currentPage = Math.min(Math.max(1, Number(page)), result.pages || 1);
+  const q = sentence ? `?q=${encodeURIComponent(sentence)}` : "";
+  $("pageImg").src = `/api/jobs/${job.id}/page/${currentPage}.png${q}`;
+  $("viewerLabel").textContent = `Page ${currentPage} of ${result.pages}${sentence ? " · sentence highlighted where found" : ""}`;
+}
+$("pageImg").addEventListener("click", () => $("pageImg").classList.toggle("zoom"));
+$("prevPage").addEventListener("click", () => openPage(currentPage - 1));
+$("nextPage").addEventListener("click", () => openPage(currentPage + 1));
+
+$("fileInput").addEventListener("change", (e) => upload(e.target.files[0]));
+const drop = $("drop");
+drop.addEventListener("dragover", (e) => { e.preventDefault(); drop.classList.add("over"); });
+drop.addEventListener("dragleave", () => drop.classList.remove("over"));
+drop.addEventListener("drop", (e) => { e.preventDefault(); drop.classList.remove("over"); upload(e.dataTransfer.files[0]); });
+$("newBtn").addEventListener("click", () => { $("fileInput").value = ""; $("fileLabel").textContent = ""; show("uploadView"); });
+$("tabs").addEventListener("click", (e) => { const t = e.target.closest("button"); if (t) { tab = t.dataset.tab; render(); } });
+$("search").addEventListener("input", render);
+document.querySelector("thead").addEventListener("click", (e) => {
+  const key = e.target.closest("th")?.dataset.sort;
+  if (!key) return;
+  sort = sort.key === key ? { key, dir: -sort.dir } : { key, dir: key === "claim_probability" ? -1 : 1 };
+  render();
+});
+$("rows").addEventListener("click", (e) => {
+  const tr = e.target.closest("tr");
+  if (!tr) return;
+  selected = $("rows")._data[tr.dataset.i];
+  document.querySelectorAll("#rows tr.sel").forEach((x) => x.classList.remove("sel"));
+  tr.classList.add("sel");
+  openPage(tr.dataset.page, selected.sentence_text);
+});
+</script>
+</body>
+</html>

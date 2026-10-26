@@ -1,0 +1,8 @@
+flask
+pandas
+pymupdf
+pymupdf4llm==1.28.2  # 2.0 on PyPI is an empty package
+spacy
+scikit-learn==1.7.2  # matches the version claim_classifier.joblib was saved with
+scipy
+joblib
